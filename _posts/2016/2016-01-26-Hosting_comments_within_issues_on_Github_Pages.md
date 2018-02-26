@@ -5,6 +5,8 @@ commentIssueId: 1
 tags: github pages, comments, jekyll
 ---
 
+_Note:_ As of February 2018, the repo for this website is public, so I moved the comments to the same repo instead of using a separate project for them. 
+
 When I created a blog to have a place to write and document things, as well as complete a class requirement for [CS 404](https://cs.byu.edu/course/cs-404), there were properties that I wanted it to have. I wanted it to be simple, to be hosted on a reputable platform, to be under my control, and to perform well. By using Github Pages to host a run a Jekyll static site, I was pretty much able to get everything in one fell swoop.
 
 However, one thing I found lacking was comments or giving anyone a way to respond or comment on a given blog post. I looked around for a few different solutions. One option that many turn to is using [Disqus](https://disqus.com/) comments. It is easy to implement, requiring a simple snippet of Javascript to be included on any post where you would like comments to be included, but several drawbacks of using Disqus quickly became apparent. As an additional Javascript component, it requires additional requests that can quickly bog down what was once a quick, simple website. [^1] Other issues of privacy and security also came up with Disqus, and any third party service you trust is just another liability for your website. [^2] Other products I looked at were [Discourse](https://www.discourse.org/) and [Poole](http://pooleapp.com/), but I really wanted to avoid making the site any more complicated and having to rely on a third party.

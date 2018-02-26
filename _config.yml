@@ -54,6 +54,11 @@ url: http://sean.lane.sh
 # then add in the baseurl here, like this: "/repository-name"
 baseurl: ""
 
+# If using GitHub to host comments (as described in 
+# http://sean.lane.sh/blog/2016/Hosting_comments_within_issues_on_Github_Pages)
+# set this value to the GitHub user and project (for example seanlane/seanlane.github.io)
+comments_uri: seanlane/seanlane.github.io
+
 # Options for paginate
 paginate: 10
 paginate_path: "/blog/page/:num"
