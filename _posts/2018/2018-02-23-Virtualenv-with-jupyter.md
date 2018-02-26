@@ -21,10 +21,13 @@ In Ubuntu/Debian based systems:
 $ sudo apt-get install python3 python3-pip
 ```
 
-Now, assuming Python 3 and `pip` are both installed, install `virtualenvwrapper`:
+Now, assuming Python 3 and `pip` are both installed, install `virtualenvwrapper` and modify your shell start up file according to these instructions: [Install `virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/install.html). I do the following for my system:
 
 ```terminal
-$ pip3 install virtualenvwrapper
+$ sudo pip install virtualenvwrapper
+$ echo "export WORKON_HOME=$HOME/.virtualenvs" >> $HOME/.profile
+$ echo "source /usr/local/bin/virtualenvwrapper.sh" >> " >> $HOME/.profile
+$ source ~/.profile
 ```
 
 ## Creating new virtual environments
