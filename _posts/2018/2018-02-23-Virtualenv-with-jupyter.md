@@ -5,7 +5,7 @@ commentIssueId: 7
 tags: python, virtualenv, jupyter
 ---
 
-A lot of my lab work and course work involved the use of Jupyter notebooks, though the Python dependencies needed conflict with other areas. I've been using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) to isolate these, and other project, environments from each other. This post goes through the process of installing everything needed to get up and running with a clean Python environment for Jupyter notebooks, including the installation of `jupyter_contrib_nbextensions` which adds community developed features.
+A lot of my lab work and course work involved the use of Jupyter notebooks, though the Python dependencies needed conflict with other areas. I've been using [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) to isolate these, and other project, environments from each other. This post goes through the process of installing everything needed to get up and running with a clean Python environment for Jupyter notebooks with separate kernels for each environment, including the installation of `jupyter_contrib_nbextensions` which adds community developed features.
 
 ## Initial setup
 
