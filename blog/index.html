@@ -1,0 +1,42 @@
+---
+layout: default
+title: Blog
+---
+
+<!-- This loops through the paginated posts -->
+<div class="posts">
+  {% for post in paginator.posts %}
+    <article class="post">
+      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="author">
+        <span class="date">{{ post.date | date: '%B %-d, %Y' }}</span>
+      </p>
+      <div class="entry">
+        {% if post.description %}
+          {{ post.description }}
+        {% else %}
+          {{ post.excerpt }}
+        {% endif %}
+      </div>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
+
+<!-- Pagination links -->
+<div class="pagination pure-g">
+  <div class="pure-u-1-2">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    {% endif %}
+    {% if paginator.previous_page and paginator.next_page%}
+     | 
+    {% endif %}
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% endif %}
+  </div>
+  <div class="pure-u-1-2" style="text-align: right;">
+    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  </div>
+</div>

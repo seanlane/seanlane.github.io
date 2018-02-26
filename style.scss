@@ -1,0 +1,56 @@
+---
+---
+
+//
+// IMPORTS
+//
+
+@import "reset";
+@import "variables";
+// Syntax highlighting @import is at the bottom of this file
+
+@import "base_rules";
+@import "layout_sections";
+
+
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+@import "pure";
+@import "grids-responsive";
+@import "comments";
+@import "highlights";
+
+/* Image Captions */
+
+.image-wrapper {
+  margin: 0 25px; 
+  text-align: center;
+
+.image-caption {
+    color: $gray;
+    margin-top: 0;
+    font-style: italic;
+  }
+}
+
+@import "home";
+@import "resume";
+@import "svg-icons";
+
+/*********************/
+/* Photo Page Styles */
+/*********************/
+
+.flickr_album {
+  width: 800px;
+  height: 600px;
+
+  @include mobile {
+    width: 500px;
+    height: 375px;    
+  }
+}
+
+.flickr_div {
+  text-align: center;
+}

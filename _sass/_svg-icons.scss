@@ -1,0 +1,32 @@
+/**************/
+/* SVG ICONS */
+/**************/
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.svg-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin: 3px;
+}
+
+.svg-fill-dark {
+  fill: $svg-dark;
+}
+
+.svg-fill-light  {
+  fill: $svg-light;
+}
+
+.svg-stroke-dark {
+  stroke: $svg-dark;
+}
+
+.svg-stroke-light  {
+  stroke: $svg-light;
+}

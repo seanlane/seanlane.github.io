@@ -1,0 +1,40 @@
+
+/*****************/
+/* Resume Styles */
+/*****************/
+
+.res_title {
+  width: 100%;
+  overflow: auto;
+}
+
+.res_title_left {
+
+}
+
+.res_title_right {
+  text-align: right;
+  @include sm {
+    text-align: left;
+  }
+}
+
+.res_title_right h4 {
+  /*@include md {
+    padding-top: 0;
+  }*/
+}
+
+.tech_container {
+  width: 100%;
+  overflow: auto;
+}
+
+.tech_item {
+  float: left;
+  margin: 5px 20px;
+}
+
+.misc_div {
+  text-align: center;
+}
