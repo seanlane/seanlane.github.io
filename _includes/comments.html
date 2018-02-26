@@ -1,7 +1,7 @@
 <div id="comments">
         <h2>Comments</h2>
         <div id="header">
-            To leave a comment, visit <a href="https://github.com/{{ste.comments_uri}}/issues/{{page.commentIssueId}}"> this post's issue page on GitHub.</a> 
+            To leave a comment, visit <a href="https://github.com/{{site.comments_uri}}/issues/{{page.commentIssueId}}"> this post's issue page on GitHub.</a> 
             A GitHub account is required, since I <a href="{{ site.baseurl }}/blog/2016/Hosting_comments_within_issues_on_Github_Pages">host this site's comments on GitHub.</a>
         <div>
     </div>
@@ -13,7 +13,7 @@
             for (var i=0; i < data.length; i++) {
                 var cuser = data[i].user.login;
                 var cuserlink = "https://www.github.com/" + data[i].user.login;
-                var clink = "https://github.com/{{ste.comments_uri}}/issues/{{page.commentIssueId}}#issuecomment-" + 
+                var clink = "https://github.com/{{site.comments_uri}}/issues/{{page.commentIssueId}}#issuecomment-" + 
                     data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
                 var cbody = data[i].body_html;
                 var cavatarlink = data[i].user.avatar_url;
@@ -27,7 +27,7 @@
             }
         }
 
-        $.ajax("https://api.github.com/repos/{{ste.comments_uri}}/issues/{{page.commentIssueId}}/comments", {
+        $.ajax("https://api.github.com/repos/{{site.comments_uri}}/issues/{{page.commentIssueId}}/comments", {
             headers: {Accept: "application/vnd.github.full+json"},
             success: function(msg){
                 loadComments(msg);
