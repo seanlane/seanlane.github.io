@@ -34,7 +34,13 @@
 			</a>
 		</div>
 	{% endif %}
-
+	{% if site.footer-links.mastodon %}
+		<div class="svg-icon">
+			<a href="https://{{ site.footer-links.mastodon }}">
+				{% include icons/mastodon.html %}
+			</a>
+		</div>
+	{% endif %}
 	{% if site.footer-links.twitter %}
 		<div class="svg-icon"> 
 			<a href="https://www.twitter.com/{{ site.footer-links.twitter }}">

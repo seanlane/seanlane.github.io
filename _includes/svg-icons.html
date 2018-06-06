@@ -69,6 +69,13 @@
 			</a>
 		</div>
 	{% endif %}
+	{% if site.footer-links.mastodon %}
+		<div class="svg-icon">
+			<a href="https://{{ site.footer-links.mastodon }}">
+				{% include icons/mastodon.html %}
+			</a>
+		</div>
+	{% endif %}
 	{% if site.footer-links.pinterest %}
 		<div class="svg-icon"> 
 			<a href="https://www.pinterest.com/{{ site.footer-links.pinterest }}">
