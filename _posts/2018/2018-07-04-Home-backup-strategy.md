@@ -53,6 +53,32 @@ Other services, like the other Google services, Facebook, etc, may not have such
 
 ## The Process
 
+```
++-------------------+                                              
+|Home Server        |                                              
+|                   |                                              
+|    +--------+     |    Gmvault           +-------+               
+|    |        |<---------------------------| GMail |               
+|    |        |     |                      +-------+               
+|    |        |     |                                              
+|    |        |     |                                              
+|    |Primary |     |    FB Data Download  +---------+             
+|    |Copy of |<---------------------------|Facebook |             
+|    |Data    |     |                      +---------+             
+|    |        |     |                                              
+|    |        |     |                                              
+|    |        |     |    Syncthing         +-------------+         
+|    |        |<---------------------------|Android Phone|         
+|    +---|----+     |                      +-------------+         
+|        | restic   |
+|        V          |                                              
+|    +-------+      |    rclone           +-----------------------+
+|    |Local  |--------------------------->| Remote Backup         |
+|    |Backup |      |                     | (Google Cloud Storage)|
+|    +-------+      |                     +-----------------------+
++-------------------+                                              
+```
+
 As illustrated in the figure above, the process for backing up then is as follows:
 
 1. Initialize a restic repository on a separate hard drive from your primary hard drives
