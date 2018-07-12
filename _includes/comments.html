@@ -17,7 +17,7 @@
                     data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
                 var cbody = data[i].body_html;
                 var cavatarlink = data[i].user.avatar_url;
-                var cdate = Date.parse(data[i].created_at).toString("yyyy-MM-dd HH:mm:ss");
+                var cdate = Date.parse(data[i].created_at).setTimezone('UTC').toString("yyyy-MM-dd HH:mm:ss");
         
                 $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" 
                     + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' 
