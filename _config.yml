@@ -116,3 +116,4 @@ exclude:
     - CNAME
     - _drafts
     - project_files
+    - wishlist.md
