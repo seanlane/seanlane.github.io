@@ -5,7 +5,7 @@ commentIssueId: 13
 tags: deep work, cal newport
 ---
 
-The following are some notes that I've gathered after reading [Deep Work](http://calnewport.com/books/deep-work/) by [Cal Newport](http://calnewport.com/). I enjoyed the book, felt it has some concepts I want to apply in my life, so I condensed the precepts I wanted to remember into a form that would fit onto a single sheet of US letter paper. A link to that PDF can be found here: {{site.baseurl}}/files/2018/deepwork.pdf
+The following are some notes that I've gathered after reading [Deep Work](http://calnewport.com/books/deep-work/) by [Cal Newport](http://calnewport.com/). I enjoyed the book, felt it has some concepts I want to apply in my life, so I condensed the precepts I wanted to remember into a form that would fit onto a single sheet of US letter paper. A link to that PDF can be found here: [Deep Work Notes PDF]({{site.baseurl}}/files/2018/deepwork.pdf)
 
 ---
 
