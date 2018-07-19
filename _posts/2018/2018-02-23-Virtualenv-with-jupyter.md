@@ -9,7 +9,7 @@ A lot of my lab work and course work involved the use of Jupyter notebooks, thou
 
 ## Initial setup
 
-This only needs to be done once on your machine/user account, in order to get the building blocks in place for creating an indefinite amount of virtual environments for Python. First, you should install a suitable copy of Python on your machine. For macOS, I recommend using the [Homebrew](brew.sh) package manager (installation instructions at the link), then install Python. Note that I'm using Python 3 since Python 2 will be end-of-life'd come the year 2020, but if you're on macOS consider installing Python 2 via Homebrew as well, since the system copy seems to be antiquated:
+This only needs to be done once on your machine/user account, in order to get the building blocks in place for creating an indefinite amount of virtual environments for Python. First, you should install a suitable copy of Python on your machine. For macOS, I recommend using the [Homebrew](brew.sh) package manager (installation instructions at the link), then install Python. Note that I'm using Python 3 since Python 2 will be end-of-life'd come the year 2020, but if you're on macOS consider installing Python 2 via Homebrew as well, since the system copy seems to be antiquated. Anyways, to install on mac via Homebrew:
 
 ```terminal
 $ brew install python3  # Follow any instructions given here from the output
@@ -19,6 +19,12 @@ In Ubuntu/Debian based systems:
 
 ```terminal
 $ sudo apt-get install python3 python3-pip
+```
+
+On Arch Linux based systems:
+
+```terminal
+$ pacman -S python-virtualenvwrapper 
 ```
 
 Now, assuming Python 3 and `pip` are both installed, install `virtualenvwrapper` and modify your shell start up file according to these instructions: [Install `virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/install.html). I do the following for my system:
