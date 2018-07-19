@@ -15,7 +15,7 @@ The following are some notes that I've gathered after reading [Deep Work](http:/
 
 The new law of productivity is:
 
-$\text{Productivity}~=~(\text{Time Spent}) \times (\text{Intensity of Focus})$
+$$\text{Productivity}~=~(\text{Time Spent}) \times (\text{Intensity of Focus})$$
 
 #### The Deep Work Hypothesis
 
