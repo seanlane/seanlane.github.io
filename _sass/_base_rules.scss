@@ -8,7 +8,7 @@ html {
 
 body {
   background: $white;
-  font: 16px/1.4 $helvetica;
+  font: 16px/1.4 $lato;
   color: $darkerGray;
   word-wrap: break-word;
 }
@@ -21,7 +21,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
   color: $darkerGray;
   line-height: 1.5;
   margin: 1em 0 0px;

@@ -14,7 +14,6 @@
 
 .title-text {
   font-size: 1.5em;
-  font-weight: bold;
 }
 
 .title {
@@ -56,7 +55,6 @@
 }
 
 .aht-title-text {
-  font-family: 'Arimo', sans-Serif;
   font-weight: normal;
   margin: 0;
   color: $darkerGray;
@@ -89,8 +87,7 @@
 }
 
 .instructure_title_text {
-  color: #9b9b9b; 
-  font-family: 'Oxygen', sans-serif; 
+  color: #9b9b9b;
   margin: 0;
   text-align: center;
 }
@@ -108,7 +105,6 @@
 
 .idea_labs_title_text {
   color: $byuBlue; 
-  font-family: 'Roboto', sans-serif;
 }
 
 /* == Microsoft == */
@@ -123,7 +119,6 @@
   display: inherit; 
   max-width: 320px; 
   margin: 0 50px; 
-  font-family: 'Arimo', sans-Serif;
   font-weight: normal;
 }
 
@@ -139,7 +134,6 @@
 
 .ta_title_text {
   display: inherit;
-  font-family: monospace;
   font-weight: normal;
   margin: 0;
 }
@@ -156,7 +150,6 @@
   display: inherit; 
   max-width: 320px; 
   margin: 0 50px; 
-  font-family: 'Arimo', sans-Serif;
   float: right;
 }
 
@@ -169,7 +162,7 @@
 }
 
 .ash_title_text {
-  font-family: 'Nothing You Could Do', cursive;
+  
 }
 
 /* == BYU == */
@@ -184,7 +177,6 @@
 }
 
 .byu_title_text {
-  font-family: 'Droid Serif', serif;
   margin: 0;
   color: $byuBlue;
   max-width: 450px;
@@ -199,7 +191,6 @@
 }
 
 .paraguay_title_text {
-  font-family: 'Ubuntu', sans-serif;
 }
 
 /* == California == */
@@ -211,5 +202,4 @@
 }
 
 .california_title_text {
-  font-family: 'Catamaran', sans-serif;
 }

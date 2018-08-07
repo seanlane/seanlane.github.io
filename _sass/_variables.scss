@@ -3,6 +3,9 @@
 // VARIABLES
 //
 
+// Import Lato font
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 // Colors
 $blue: #0078e7;
 $byuBlue: #002255;
@@ -19,8 +22,8 @@ $reallyLightGray: hsl(210, 9%, 96%);
 $white: #fff;
 
 // Font stacks
-$helvetica: Lato, Helvetica, Arial, sans-serif;
-$helveticaNeue: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$helvetica: Helvetica, Arial, sans-serif;
+$lato: Lato, Arial, sans-serif;
 $georgia: Georgia, serif;
 
 // Set SVG Icon colors
