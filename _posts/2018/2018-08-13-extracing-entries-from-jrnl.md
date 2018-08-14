@@ -9,7 +9,7 @@ Relating to my previous post today about setting up a blog using AWS, Docker Com
 
 Unfortunately, the only export option with jrnl.com seems to be the ability to download a PDF file that is created when you pay the service to have your journal entries printed physically.[^1] According to that same source, there allegedly will be an option to backup the journal entries without having to purchase a physical copy, but at the moment it has been over a year since that helpdesk article promised that feature to be completed before the end of 2017. Aside from that, there could be loads of potential issues extracting my wife's writings from the PDF file they produce, depending on how it's put together. With that in mind, I used the following steps to retrieve her content.
 
-In a similar manner to this article: [Ian London: Web Scraping - Discovering Hidden APIs](https://ianlondon.github.io/blog/web-scraping-discovering-hidden-apis/), I used the outgoing connections from the jrnl.com web application to identify their hidden API with which to access the entries.
+In a similar manner to this article: [Ian London: Web Scraping - Discovering Hidden APIs](https://ianlondon.github.io/blog/web-scraping-discovering-hidden-apis/), I used the outgoing connections from the jrnl.com web application to identify their hidden API with which to access the entries. After logging into the service and navigating to the journal entries, you can view the request headers that your browser sends to jrnl.com to retrieve the entries and other content. The API key is one of these headers, with the first portion visible in the image below under `Authorization`.
 
 {% include image.html
             img="images/2018/08/jrnl1.png"
