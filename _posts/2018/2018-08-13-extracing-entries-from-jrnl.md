@@ -16,7 +16,7 @@ In a similar manner to this article: [Ian London: Web Scraping - Discovering Hid
             title="Getting the API Key"
             caption="Getting the API Key" %}
 
-Some more poking around showed that the base url for the API is `https://jrnl.com/api/v1/`, and the API endpoint for the entries is, unsurprisingly, `https://jrnl.com/api/v1/entry`. Using a REST API tool called [Insomnia](https://insomnia.rest/), we can plug in the API key, use the endpoint with the limit option set to allow more entries returned: `https://jrnl.com/api/v1/entry?limit=250`.
+Some more poking around showed that the base url for the API is `https://jrnl.com/api/v1/`, and the API endpoint for the entries is, unsurprisingly, `https://jrnl.com/api/v1/entry`. Using a REST API tool called [Insomnia](https://insomnia.rest/), we can plug in the API key and use the endpoint with the limit option set to allow more entries returned: `https://jrnl.com/api/v1/entry?limit=250`.
 
 Then using something like the following Python script, you can convert the posts into a format for import elsewhere. This script is one I used to prepare the entries for import into the [Ghost CMS platform](https://ghost.org) which I set up following the instructions in my previous post. There is a little more post-processing to get it into Ghost, if you made it this far then following the Ghost documentation will get you the rest of the way. The script assumes that the entries from jrnl.com are isolated and saved as a JSON array in a file called `posts.json`.
 
