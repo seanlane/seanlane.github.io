@@ -22,7 +22,7 @@ Then using something like the following Python script, you can convert the posts
 
 
 ```python
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 from datetime import datetime
 import json, os
@@ -31,10 +31,9 @@ def millis(x):
   return int(datetime.fromisoformat(x).timestamp() * 1000)
 
 with open('posts.json') as f:
-  data = json.load(f)
+  posts = json.load(f)
 
 new_posts = []
-
 for post in posts:
   temp = {
     'id': post['id'],
@@ -60,7 +59,6 @@ for post in posts:
 
 with open('new_posts.json', 'w') as f:
   json.dump(new_posts, f, indent=2)
-
 ```
 
 ## References
