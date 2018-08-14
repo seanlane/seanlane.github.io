@@ -18,6 +18,51 @@ In a similar manner to this article: [Ian London: Web Scraping - Discovering Hid
 
 Some more poking around showed that the base url for the API is `https://jrnl.com/api/v1/`, and the API endpoint for the entries is, unsurprisingly, `https://jrnl.com/api/v1/entry`. Using a REST API tool called [Insomnia](https://insomnia.rest/), we can plug in the API key, use the endpoint with the limit option set to allow more entries returned: `https://jrnl.com/api/v1/entry?limit=250`.
 
-Then using something like the following Python script, you can convert the posts into a format for import elsewhere. This script is one I used to prepare the entries for import into the [Ghost CMS platform](https://ghost.org) which I set up following the instructions in my previous post. There is a little more post-processing to get it into Ghost, if you made it this far then following the Ghost documentation will get you the rest of the way.
+Then using something like the following Python script, you can convert the posts into a format for import elsewhere. This script is one I used to prepare the entries for import into the [Ghost CMS platform](https://ghost.org) which I set up following the instructions in my previous post. There is a little more post-processing to get it into Ghost, if you made it this far then following the Ghost documentation will get you the rest of the way. The script assumes that the entries from jrnl.com are isolated and saved as a JSON array in a file called `posts.json`.
+
+
+```python
+#! /usr/bin/env python
+
+from datetime import datetime
+import json, os
+
+def millis(x):
+  return int(datetime.fromisoformat(x).timestamp() * 1000)
+
+with open('posts.json') as f:
+  data = json.load(f)
+
+new_posts = []
+
+for post in posts:
+  temp = {
+    'id': post['id'],
+    'title': post['title'],
+    'slug': post['title'],
+    'html': post['content'],
+    'image': None,
+    'featured': 0,
+    'page': 0,
+    'status': 'published',
+    'language': 'en_US',
+    'meta_title': None,
+    'meta_description': None,
+    'author_id': 1,
+    'created_at': millis(post['created']),
+    'created_by': 1,
+    'updated_at': millis(post['modified']),
+    'updated_by': 1,
+    'published_at': millis(post['entry_date']),
+    'published_by': 1
+  }
+  new_posts.append(temp)
+
+with open('new_posts.json', 'w') as f:
+  json.dump(new_posts, f, indent=2)
+
+```
+
+## References
 
 [^1]: http://helpdesk.jrnl.com/kb/article/150-can-i-backup-my-jrnl/
