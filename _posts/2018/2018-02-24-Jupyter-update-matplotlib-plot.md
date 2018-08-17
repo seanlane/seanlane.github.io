@@ -86,4 +86,6 @@ for i in range(1, n):
         break
 ```
 
+{% include footnotes.md %}
+
 [^1]: [Stack Overflow: Jupyter notebook matplotlib figures show up small until cell is completed](https://stackoverflow.com/questions/45384072/jupyter-notebook-matplotlib-figures-show-up-small-until-cell-is-completed)

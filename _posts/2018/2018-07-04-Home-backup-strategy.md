@@ -105,7 +105,7 @@ All of these can be found in my personal project here: [GitHub - seanlane - rest
 
 I've been using these backups in their current form for a bit more than a week, and everything has been working great. The restore process from both backups has been flawless, every night a new snapshot is taken and then restic takes care of de-duplicating and pruning the snapshots according to my settings in `restic_env.sh`. I hope this post might be help to anyone looking to securely preserve their digital belongings on a budget.
 
-## References
+{% include footnotes.md %}
 
 [^1]: [BackBlaze Blog: 3-2-1 Backup Strategy](https://www.backblaze.com/blog/the-3-2-1-backup-strategy/)
 [^2]: [Restic Home Page](https://restic.net/)

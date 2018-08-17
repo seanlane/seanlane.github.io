@@ -281,6 +281,8 @@ When properly setup, we will then see an appropriate comments section after our 
 
 It might be a slight hack, but now I have an easy way to pull comments into my static website without involving a third-party platform or forcing users to download yet another Javascript tracking widget. Hopefully, my example is of use to someone, and I appreciate Ivan's post for leading the way.
 
+{% include footnotes.md %}
+
 [^1]: [http://chrislema.com/killed-disqus-commenting/http://chrislema.com/killed-disqus-commenting/](http://chrislema.com/killed-disqus-commenting/http://chrislema.com/killed-disqus-commenting/)  
 [^2]: [https://en.wikipedia.org/wiki/Disqus#Criticism_and_privacy_concerns](https://en.wikipedia.org/wiki/Disqus#Criticism_and_privacy_concerns)  
 [^3]: [http://ivanzuzak.info/2011/02/18/](http://ivanzuzak.info/2011/02/18/)  

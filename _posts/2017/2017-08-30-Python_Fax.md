@@ -16,7 +16,7 @@ Note that I'm not affiliated with Phaxio in any way, it just happens to be late,
 3. Put them into the script below (You can also use the Test keys to make sure this works before trying too.)
 4. Run the script, for example, if I saved the script to `fax.py`, I'm sending to Tommy Tutone, and my file to send is `letter.pdf`, I would use the following: `./fax.py +15558675309 /path/to/letter.pdf`
 
-``` python
+```python
 #!/usr/bin/env python3
 from subprocess import call
 import sys

@@ -61,6 +61,6 @@ with open('new_posts.json', 'w') as f:
   json.dump(new_posts, f, indent=2)
 ```
 
-## References
+{% include footnotes.md %}
 
 [^1]: http://helpdesk.jrnl.com/kb/article/150-can-i-backup-my-jrnl/
