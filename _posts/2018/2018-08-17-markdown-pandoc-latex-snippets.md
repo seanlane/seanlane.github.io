@@ -69,6 +69,18 @@ Running this inserts the LaTeX content into your default (or other specified tem
 $ pandoc source.md -o output.tex  --template default.latex
 ```
 
+---
+
+## Adjust space around title in Pandoc
+
+Use the `\vspace` command in the `title` option of the YAML header to adjust space as needed around the title. You can use it before, after, or before and after the desire text. In this example, I'm reducing the amount of space before and after the title:
+
+```yaml
+title: \vspace{-5ex}Sample title\vspace{-5ex}
+```
+
+Inspired by this Stack Overflow answer: [https://tex.stackexchange.com/a/593](https://tex.stackexchange.com/a/593)
+
 {% include footnotes.md %}
 
 [^1]: [https://daringfireball.net/projects/markdown/](https://daringfireball.net/projects/markdown/) <br/> [https://en.wikipedia.org/wiki/Markdown](https://en.wikipedia.org/wiki/Markdown)
