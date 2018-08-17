@@ -18,10 +18,7 @@ Include the following in the YAML header:
 ```yaml
 header-includes:
   - \usepackage{multicol}
-  - \newcommand{\hideFromPandoc}[1]{#1}
-    - \hideFromPandoc{
-        \let\Begin\begin
-        \let\End\end}
+  - \newcommand{\hideFromPandoc}[1]{#1}\hideFromPandoc{\let\Begin\begin\let\End\end}
 ```
 
 Then begin and end sections of multiple columns like so:
