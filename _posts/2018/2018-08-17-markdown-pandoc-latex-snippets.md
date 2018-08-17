@@ -5,9 +5,9 @@ commentIssueId: 16
 tags: markdown, pandoc, latex
 ---
 
-This is another living post that serves more for my personal benefit than anything else. By living, I mean that I will continue to update it over time as I find things I want to keep easily accessible. I love using Markdown[^1] for a variety of tasks, and if I need to present my work elsewhere (like homework assignments, distribution of meeting notes, etc.) I use Pandoc[^2] to convert the Markdown into $$\LaTeX$$, which makes some lazy writing look much more professional, in my opinion. 
+This is another living post that serves more for my personal benefit than anything else. By living, I mean that I will continue to update it over time as I find things I want to keep easily accessible. This post is a place to paste snippets and boiler plate of Markdown/Pandoc/LaTeX material that I find useful but often forget. There's probably nothing very genius or awe-inspiring here, but hopefully I won't have to `grep` through by bash history as often, trying to remember what I did that one time to do that one thing.
 
-This post is a place to paste snippets and boiler plate of Markdown/Pandoc/LaTeX material that I find useful but often forget. There's probably nothing very genius or awe-inspiring here, but hopefully I won't have to `grep` through by bash history as often, trying to remember what I did that one time to do that one thing.
+I love using Markdown[^1] for a variety of tasks, and if I need to present my work elsewhere (like homework assignments, distribution of meeting notes, etc.) I use Pandoc[^2] to convert the Markdown into $$\LaTeX$$, which makes some lazy writing look much more professional, in my opinion. 
 
 ---
 
