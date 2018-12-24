@@ -1,0 +1,3 @@
+[submodule "themes/lane-grid"]
+	path = themes/lane-grid
+	url = https://github.com/seanlane/lane-grid.git

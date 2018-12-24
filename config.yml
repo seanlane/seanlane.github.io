@@ -1,0 +1,128 @@
+baseURL: https://sean.lane.sh
+disablePathToLower: true
+languageCode: en-us
+title: Sean Lane
+theme: lane-grid
+languagecode: en
+defaultcontentlanguage: en
+paginate: 10
+canonifyurls: true
+pygmentsstyle: monokai
+pygmentscodefences: true
+pygmentscodefencesguesssyntax: true
+pygmentsOptions: "linenos=table"
+permalinks:
+  posts: /posts/:year/:month/:title
+  presentations: /presentations/:year/:month/:title
+params:
+  author: Sean Lane
+  info: BYU CS PhD Student
+  description: Sean Lane's personal website
+  keywords: 'blog,developer,personal'
+  avatarurl: images/sean.png
+  favicon_32: /images/favicon-32x32.png
+  favicon_16: /images/favicon-16x16.png
+  footercontent: 
+  hidecredits: false
+  hidecopyright: false
+  inverted: false
+  math: true
+  comments_uri: seanlane/seanlane.github.io
+  custom_css: 
+    - style.css
+  roles:
+    current:
+      - title: Director of Engineering
+        name: Achilles Heel Technologies
+        image: /images/index/aht.png
+        url: http://achillesheel.tech
+      - title: Computer Science PhD Student
+        name: BYU IDeA Labs
+        image: /images/index/idealabs.png
+        url: https://idealabs.byu.edu
+      - title: PhD Intern
+        name: Pacific Northwest National Laboratory
+        image: /images/index/pnnl.svg
+        url: https://www.pnnl.gov
+    past:
+      - title: Software Engineer in Test Intern
+        name: Instructure
+        image: /images/index/instructure.svg
+        url: https://instructure.com
+      - title: B.S. in Computer Science
+        name: Brigham Young University
+        image: /images/index/byu-seal-blue.svg
+        image_class: index-image-tall
+        url: https://cs.byu.edu
+      - title: Software Development Engineer
+        name: Microsoft
+        image: /images/index/microsoft.svg
+        url: https://microsoft.com
+      - title: Web Application Developer
+        name: BYU College of Life Sciences
+        image: /images/index/byu-y-bluebg.svg
+        image_class: index-image-tall
+        url: https://lifesciences.byu.edu
+      - title: Technical Support Engineer
+        name: Bluehost
+        image: /images/index/bluehost.svg
+        url: https://bluehost.com
+      - title: A.S. in General Studies
+        name: LDS Business College
+        image: /images/index/ldsbc.svg
+        url: https://ldsbc.edu
+      - title: LDS Missionary
+        name: The Church of Jesus Christ of Latter-Day Saints
+        image: /images/index/paraguay.svg
+        image_class: index-image-tall
+        url: https://mormon.org
+        post_url: posts/2015/09/Missionary-Service/
+      - title: Eagle Scout
+        name: Boy Scouts of America
+        image: /images/index/bsa.svg
+        image_class: index-image-tall
+        url: https://www.scouting.org/
+        post_url: posts/2015/09/Eagle-Scout/
+      - title: Born and Raised
+        name: California
+        image: /images/index/california.svg
+        url: https://en.wikipedia.org/wiki/California
+  social:
+    - name: Email
+      icon: far fa-envelope fa-lg
+      weight: 1
+      url: 'mailto:hi@sean.lane.sh'
+    - name: Github
+      icon: fab fa-github fa-lg
+      weight: 2
+      url: 'https://github.com/seanlane/'
+    - name: Keybase
+      icon: fab fa-keybase fa-lg
+      weight: 3
+      url: 'https://keybase.io/seanlane'
+    - name: LinkedIn
+      icon: fab fa-linkedin fa-lg
+      weight: 4
+      url: 'https://www.linkedin.com/in/SeanTLane'
+    - name: Mastodon
+      icon: fab fa-mastodon fa-lg
+      weight: 5
+      url: 'https://mastodon.technology/@seanlane'
+    - name: RSS
+      icon: fas fa-rss fa-lg
+      url: /posts/index.xml
+    - name: Twitter
+      icon: fab fa-twitter fa-lg
+      weight: 6
+      url: 'https://twitter.com/_seanlane'
+menu:
+  main:
+    - name: Home
+      weight: 1
+      url: /
+    - name: Resume
+      weight: 2
+      url: /resume/
+    - name: Posts
+      weight: 3
+      url: /posts/
