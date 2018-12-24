@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sean Lane">
+    <meta name="description" content="Sean Lane&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+    <title>
+  Dynamic weight tracking form and dashboard · Sean Lane
+</title>
+
+    <link rel="canonical" href="https://sean.lane.sh/posts/2018/02/Dynamic-weight-tracking-form-and-dashboard/">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  
+    
+    
+    <link rel="stylesheet" href="https://sean.lane.sh/css/coder.min.1c91e5515e84bd00b2640257e6a9bcc3d8117de2f53a975a352c2247502cc864.css" integrity="sha256-HJHlUV6EvQCyZAJX5qm8w9gRfeL1OpdaNSwiR1AsyGQ=" crossorigin="anonymous" media="screen" />
+  
+  
+  
+  
+    <link rel="stylesheet" href="https://sean.lane.sh/style.css">
+  
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-16x16.png" sizes="16x16">
+  
+    <meta name="generator" content="Hugo 0.51" />
+  </head>
+  <body class=" ">
+    <nav class="navigation pure-g">
+  <section class="pure-u-1 pure-u-md-1-3 nav-left">
+    
+      <a class="nav-avatar" href="https://sean.lane.sh">
+        <img src="https://sean.lane.sh/images/sean.png" alt="avatar" />
+      </a>
+    
+    <a class="nav-title" href="https://sean.lane.sh">
+      Sean Lane
+    </a>
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-center">
+    
+      
+        <a href="mailto:hi@sean.lane.sh"><i class="far fa-envelope fa-lg"></i></a>
+      
+        <a href="https://github.com/seanlane/"><i class="fab fa-github fa-lg"></i></a>
+      
+        <a href="https://keybase.io/seanlane"><i class="fab fa-keybase fa-lg"></i></a>
+      
+        <a href="https://www.linkedin.com/in/SeanTLane"><i class="fab fa-linkedin fa-lg"></i></a>
+      
+        <a href="https://mastodon.technology/@seanlane"><i class="fab fa-mastodon fa-lg"></i></a>
+      
+        <a href="https://sean.lane.sh/posts/index.xml"><i class="fas fa-rss fa-lg"></i></a>
+      
+        <a href="https://twitter.com/_seanlane"><i class="fab fa-twitter fa-lg"></i></a>
+      
+    
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-right">
+    
+      
+        <a href="https://sean.lane.sh/">Home</a>
+      
+        <a href="https://sean.lane.sh/resume/">Resume</a>
+      
+        <a href="https://sean.lane.sh/posts/">Posts</a>
+      
+    
+  </section>
+</nav>
+
+    <main class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Dynamic weight tracking form and dashboard</h1>
+        </div>
+        <div class="post-meta pure-g">
+          <div class="posted-on pure-u-1 pure-u-sm-1-3">
+            <i class="fas fa-calendar"></i>
+            <time datetime='2018-02-26T00:00:00Z'>
+              February 26, 2018
+            </time>
+          </div>
+          <div class="reading-time pure-u-1 pure-u-sm-1-3 post-center">
+            <i class="fas fa-clock"></i>
+            Reading time: One minute
+          </div>
+          <div class="pure-u-1 pure-u-sm-1-3 post-right">
+            
+            <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://sean.lane.sh/tags/scripts/">Scripts</a>
+      <span class="separator">•</span>
+    <a href="https://sean.lane.sh/tags/web/">Web</a></div>
+
+          </div>
+        </div>
+      </header>
+      <div>
+        <p>This is a quick post, but if you want a quick way to track body weight, or any metric you choose, and have an automatically updating dashboard, this is it. I used Google Forms to easy record the information and then this information is read by a Google Apps Script that generates a chart with <a href="http://www.chartjs.org/">Chart.js</a>.</p>
+
+<figure>
+    <img src="https://sean.lane.sh/images/2018/02/weight-tracker/screenshot.png"
+         alt="Example Screenshot"/> <figcaption>
+            <p>Example Screenshot</p>
+        </figcaption>
+</figure>
+
+
+<p>I roughly followed the instruction found here by Ben Collins: <a href="https://www.benlcollins.com/spreadsheets/d3-google-sheets/">Creating a d3 chart with data from Google Sheets</a>. The largest differences were using Chart.JS for simplicity and using time series data, since I wanted to track weight over time. Hopefully this project can serve as an example or base for whatever you&rsquo;d like to do.</p>
+
+<p>The general process was:</p>
+
+<ol>
+<li>Create a Google Form to store the data you&rsquo;d like to access, and add some of this data</li>
+<li>Open up the script editor and create the following files in the Apps Script project:
+
+<ul>
+<li>code.gs</li>
+<li>index.html</li>
+<li>styles.css.html</li>
+<li>main.js.html</li>
+<li>chart.js.html</li>
+</ul></li>
+<li>Copy and paste the code from GitHub for each of these files from the project repo: <a href="https://github.com/seanlane/weight-tracker-form">Weight Tracker Form</a></li>
+<li>Publish the app to the web</li>
+</ol>
+
+<p>Note that you&rsquo;ll need to modify various links and IDs within the code base, but it should be apparent when you look through each file.</p>
+
+<p>Source Code: <a href="https://github.com/seanlane/weight-tracker-form">Weight Tracker Form</a></p>
+
+      </div>
+      <div id="comments" class="comments">
+    <h2>Comments</h2>
+    <div id="comments-preamble">
+        To leave a comment, <a href="https://github.com/seanlane/seanlane.github.io/issues/9">visit this post's issue page on GitHub.</a> 
+        A GitHub account is required, since <a href="https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/">I host this site's comments on GitHub.</a>
+    <div>
+</div>
+<script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript">
+  function loadComments(data) {
+    for (var i=0; i < data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = "https://www.github.com/" + data[i].user.login;
+      var clink = "https://github.com/seanlane\/seanlane.github.io/issues/9#issuecomment-" + 
+          data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;
+      var cdate = Date.parse(data[i].created_at).setTimezone('UTC').toString("yyyy-MM-dd HH:mm:ss");
+
+      $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" 
+        + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' 
+        + "</div><a class='commentuser' href=\"" + cuserlink + "\">" 
+        + cuser + "</a><a class='commentdate' href=\"" + clink 
+        + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+    }
+  }
+
+  $.ajax("https://api.github.com/repos/seanlane\/seanlane.github.io/issues/9/comments", {
+    headers: {Accept: "application/vnd.github.full+json"},
+    success: function(msg){
+      loadComments(msg);
+    }
+  });
+</script>
+      <footer>
+        
+      </footer>
+    </article>
+    
+  </section>
+
+    </main>
+    <footer class="footer">
+  
+   © 2018
+  
+     · 
+    Powered by <a href="https://gohugo.io/">Hugo</a> &amp; Extended from <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+  
+  
+</footer>
+
+    
+  </body>
+</html>

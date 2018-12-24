@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sean Lane">
+    <meta name="description" content="Sean Lane&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+    <title>
+  Send a fax from the command line with Python and Phaxio · Sean Lane
+</title>
+
+    <link rel="canonical" href="https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  
+    
+    
+    <link rel="stylesheet" href="https://sean.lane.sh/css/coder.min.1c91e5515e84bd00b2640257e6a9bcc3d8117de2f53a975a352c2247502cc864.css" integrity="sha256-HJHlUV6EvQCyZAJX5qm8w9gRfeL1OpdaNSwiR1AsyGQ=" crossorigin="anonymous" media="screen" />
+  
+  
+  
+  
+    <link rel="stylesheet" href="https://sean.lane.sh/style.css">
+  
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-16x16.png" sizes="16x16">
+  
+    <meta name="generator" content="Hugo 0.51" />
+  </head>
+  <body class=" ">
+    <nav class="navigation pure-g">
+  <section class="pure-u-1 pure-u-md-1-3 nav-left">
+    
+      <a class="nav-avatar" href="https://sean.lane.sh">
+        <img src="https://sean.lane.sh/images/sean.png" alt="avatar" />
+      </a>
+    
+    <a class="nav-title" href="https://sean.lane.sh">
+      Sean Lane
+    </a>
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-center">
+    
+      
+        <a href="mailto:hi@sean.lane.sh"><i class="far fa-envelope fa-lg"></i></a>
+      
+        <a href="https://github.com/seanlane/"><i class="fab fa-github fa-lg"></i></a>
+      
+        <a href="https://keybase.io/seanlane"><i class="fab fa-keybase fa-lg"></i></a>
+      
+        <a href="https://www.linkedin.com/in/SeanTLane"><i class="fab fa-linkedin fa-lg"></i></a>
+      
+        <a href="https://mastodon.technology/@seanlane"><i class="fab fa-mastodon fa-lg"></i></a>
+      
+        <a href="https://sean.lane.sh/posts/index.xml"><i class="fas fa-rss fa-lg"></i></a>
+      
+        <a href="https://twitter.com/_seanlane"><i class="fab fa-twitter fa-lg"></i></a>
+      
+    
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-right">
+    
+      
+        <a href="https://sean.lane.sh/">Home</a>
+      
+        <a href="https://sean.lane.sh/resume/">Resume</a>
+      
+        <a href="https://sean.lane.sh/posts/">Posts</a>
+      
+    
+  </section>
+</nav>
+
+    <main class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Send a fax from the command line with Python and Phaxio</h1>
+        </div>
+        <div class="post-meta pure-g">
+          <div class="posted-on pure-u-1 pure-u-sm-1-3">
+            <i class="fas fa-calendar"></i>
+            <time datetime='2017-08-30T00:00:00Z'>
+              August 30, 2017
+            </time>
+          </div>
+          <div class="reading-time pure-u-1 pure-u-sm-1-3 post-center">
+            <i class="fas fa-clock"></i>
+            Reading time: 2 minutes
+          </div>
+          <div class="pure-u-1 pure-u-sm-1-3 post-right">
+            
+            <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://sean.lane.sh/tags/python/">Python</a>
+      <span class="separator">•</span>
+    <a href="https://sean.lane.sh/tags/scripts/">Scripts</a>
+      <span class="separator">•</span>
+    <a href="https://sean.lane.sh/tags/cli/">CLI</a></div>
+
+          </div>
+        </div>
+      </header>
+      <div>
+        
+
+<p>If you want to send a simple fax quickly, cheaply, and painlessly, Phaxio and Python make a nice combo. Below is a litte script that I wrote, based on this <a href="https://www.petekeen.net/command-line-faxing">Ruby script by Pete Keen</a> that is slightly out of date. There are Phaxios Python libraries, but I ran into a couple issues, and this seems to be the most brain-dead simple solution. Pros: No external dependencies. Cons: It uses the <code>shell=True</code> parameter for <code>subprocess.call</code>, but that shouldn&rsquo;t be an issue since you&rsquo;re only using this to send a quick fax at 2 AM and you don&rsquo;t want to pay UPS/FedEx/whomever too much money for that privilege tomorrow, right?</p>
+
+<p>Note that I&rsquo;m not affiliated with Phaxio in any way, it just happens to be late, I needed to send a fax, and they checked all the right boxes. I stumbled on Phaxio, but for someone just wanting to send a quick fax once every year or so, it&rsquo;s great. Pricing is about $0.07 a page (and I received $1.00 account credit just for signing up at the time of writing this), so it&rsquo;s perfect for my use case.</p>
+
+<h2 id="setup">Setup</h2>
+
+<ol>
+<li>Sign up for an account with <a href="https://www.phaxio.com/">Phaxio: https://www.phaxio.com/</a></li>
+<li>Get your API Keys: <a href="https://console.phaxio.com/api_credentials">Phaxio API Credentials</a></li>
+<li>Put them into the script below (You can also use the Test keys to make sure this works before trying too.)</li>
+<li>Run the script, for example, if I saved the script to <code>fax.py</code>, I&rsquo;m sending to Tommy Tutone, and my file to send is <code>letter.pdf</code>, I would use the following: <code>./fax.py +15558675309 /path/to/letter.pdf</code></li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">23
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python3</span>
+<span style="color:#f92672">from</span> subprocess <span style="color:#f92672">import</span> call
+<span style="color:#f92672">import</span> sys
+
+<span style="color:#66d9ef">if</span> len(sys<span style="color:#f92672">.</span>argv) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">2</span>:
+	<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Usage: send_fax NUMBER FILENAME...&#34;</span>)
+	exit(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+
+number <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>]   
+api_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;put_api_key_here&#39;</span>
+api_secret <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;put_api_secret_here&#39;</span>
+
+command_args <span style="color:#f92672">=</span> [
+  <span style="color:#e6db74">&#34;curl&#34;</span>,
+  <span style="color:#e6db74">&#34;https://api.phaxio.com/v2/faxes&#34;</span>,
+  <span style="color:#e6db74">&#34;-u &#39;{}:{}&#39;&#34;</span><span style="color:#f92672">.</span>format(api_key, api_secret),
+  <span style="color:#e6db74">&#34;-F &#39;to={}&#39;&#34;</span><span style="color:#f92672">.</span>format(number)
+]
+
+<span style="color:#66d9ef">for</span> file <span style="color:#f92672">in</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">2</span>:]:
+	command_args<span style="color:#f92672">.</span>append(<span style="color:#e6db74">&#34;-F &#39;file=@{}&#39;&#34;</span><span style="color:#f92672">.</span>format(file))
+
+call(<span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">.</span>join(command_args), shell<span style="color:#f92672">=</span>True)</code></pre></td></tr></table>
+</div>
+</div>
+<p>The script can be found in this GitHub Gist here: <a href="https://gist.github.com/seanlane/67504bf39696de8c0bc88ad89844f9df">https://gist.github.com/seanlane/67504bf39696de8c0bc88ad89844f9df</a></p>
+
+<p>Feel free to fork it and suggest improvements.</p>
+
+      </div>
+      <div id="comments" class="comments">
+    <h2>Comments</h2>
+    <div id="comments-preamble">
+        To leave a comment, <a href="https://github.com/seanlane/seanlane.github.io/issues/5">visit this post's issue page on GitHub.</a> 
+        A GitHub account is required, since <a href="https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/">I host this site's comments on GitHub.</a>
+    <div>
+</div>
+<script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript">
+  function loadComments(data) {
+    for (var i=0; i < data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = "https://www.github.com/" + data[i].user.login;
+      var clink = "https://github.com/seanlane\/seanlane.github.io/issues/5#issuecomment-" + 
+          data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;
+      var cdate = Date.parse(data[i].created_at).setTimezone('UTC').toString("yyyy-MM-dd HH:mm:ss");
+
+      $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" 
+        + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' 
+        + "</div><a class='commentuser' href=\"" + cuserlink + "\">" 
+        + cuser + "</a><a class='commentdate' href=\"" + clink 
+        + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+    }
+  }
+
+  $.ajax("https://api.github.com/repos/seanlane\/seanlane.github.io/issues/5/comments", {
+    headers: {Accept: "application/vnd.github.full+json"},
+    success: function(msg){
+      loadComments(msg);
+    }
+  });
+</script>
+      <footer>
+        
+      </footer>
+    </article>
+    
+  </section>
+
+    </main>
+    <footer class="footer">
+  
+   © 2018
+  
+     · 
+    Powered by <a href="https://gohugo.io/">Hugo</a> &amp; Extended from <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+  
+  
+</footer>
+
+    
+  </body>
+</html>

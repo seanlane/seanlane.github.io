@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sean Lane">
+    <meta name="description" content="Sean Lane&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+    <title>
+  Installing Arch Linux on a Microsoft Surface 3 · Sean Lane
+</title>
+
+    <link rel="canonical" href="https://sean.lane.sh/posts/2018/01/Installing-Arch-Linux-on-a-Microsoft-Surface-3/">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  
+    
+    
+    <link rel="stylesheet" href="https://sean.lane.sh/css/coder.min.1c91e5515e84bd00b2640257e6a9bcc3d8117de2f53a975a352c2247502cc864.css" integrity="sha256-HJHlUV6EvQCyZAJX5qm8w9gRfeL1OpdaNSwiR1AsyGQ=" crossorigin="anonymous" media="screen" />
+  
+  
+  
+  
+    <link rel="stylesheet" href="https://sean.lane.sh/style.css">
+  
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-16x16.png" sizes="16x16">
+  
+    <meta name="generator" content="Hugo 0.51" />
+  </head>
+  <body class=" ">
+    <nav class="navigation pure-g">
+  <section class="pure-u-1 pure-u-md-1-3 nav-left">
+    
+      <a class="nav-avatar" href="https://sean.lane.sh">
+        <img src="https://sean.lane.sh/images/sean.png" alt="avatar" />
+      </a>
+    
+    <a class="nav-title" href="https://sean.lane.sh">
+      Sean Lane
+    </a>
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-center">
+    
+      
+        <a href="mailto:hi@sean.lane.sh"><i class="far fa-envelope fa-lg"></i></a>
+      
+        <a href="https://github.com/seanlane/"><i class="fab fa-github fa-lg"></i></a>
+      
+        <a href="https://keybase.io/seanlane"><i class="fab fa-keybase fa-lg"></i></a>
+      
+        <a href="https://www.linkedin.com/in/SeanTLane"><i class="fab fa-linkedin fa-lg"></i></a>
+      
+        <a href="https://mastodon.technology/@seanlane"><i class="fab fa-mastodon fa-lg"></i></a>
+      
+        <a href="https://sean.lane.sh/posts/index.xml"><i class="fas fa-rss fa-lg"></i></a>
+      
+        <a href="https://twitter.com/_seanlane"><i class="fab fa-twitter fa-lg"></i></a>
+      
+    
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-right">
+    
+      
+        <a href="https://sean.lane.sh/">Home</a>
+      
+        <a href="https://sean.lane.sh/resume/">Resume</a>
+      
+        <a href="https://sean.lane.sh/posts/">Posts</a>
+      
+    
+  </section>
+</nav>
+
+    <main class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Installing Arch Linux on a Microsoft Surface 3</h1>
+        </div>
+        <div class="post-meta pure-g">
+          <div class="posted-on pure-u-1 pure-u-sm-1-3">
+            <i class="fas fa-calendar"></i>
+            <time datetime='2018-01-26T00:00:00Z'>
+              January 26, 2018
+            </time>
+          </div>
+          <div class="reading-time pure-u-1 pure-u-sm-1-3 post-center">
+            <i class="fas fa-clock"></i>
+            Reading time: 6 minutes
+          </div>
+          <div class="pure-u-1 pure-u-sm-1-3 post-right">
+            
+            <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://sean.lane.sh/tags/linux/">Linux</a>
+      <span class="separator">•</span>
+    <a href="https://sean.lane.sh/tags/cli/">CLI</a></div>
+
+          </div>
+        </div>
+      </header>
+      <div>
+        
+
+<p>A few years ago, I was given a Microsoft Surface 3 tablet that has since fallen into disuse. I was appreciative of the gift, though to be honest the Intel Atom CPU it came with is fairly underpowered when it comes to running Windows 10, so I decided to install a light Linux distro on it to get the tablet back into running order. I came across the blog post <a href="https://blog.chadvoegele.com/posts/post2.html">Running Arch Linux on a Surface 3</a> by <a href="http://www.chadvoegele.com/">Chad Voegele</a>, which was fairly useful in getting started, and I wanted to write a post of my own to share some addition details and places where I diverged from Chad&rsquo;s post along the way.</p>
+
+<p>The biggest  difference is that I had no intentions of dual booting Windows alongside Linux, so I disregarded any shrinking of the Windows partition or having to consolidate the Windows partition into one part of the SSD. Past that, I followed the overall path that Chad outlines with some minor modifications/details.</p>
+
+<h1 id="disable-secure-boot">Disable Secure Boot</h1>
+
+<p>We&rsquo;ll first need to disable the Secure Boot feature that checks installed kernels against an approved list, since we&rsquo;re installing one that one be pre-approved by Microsoft.</p>
+
+<ol>
+<li>From the powered off state, hold the volume up button, press and then release the power button, and keep holding the volume up button until the BIOS screen appears</li>
+<li>Using the keyboard, go to the Secure Boot option, press enter to show the selection dialog, and then select Disable to disable Secure Boot</li>
+<li>From the BIOS screen, also change the <a href="https://support.microsoft.com/en-us/help/4023511/surface-boot-surface-from-a-usb-device?os=windows-10&amp;=undefined">boot order</a> from <code>SSD</code> to <code>Network &gt; USB &gt; SSD</code> before moving on</li>
+</ol>
+
+<h1 id="install-arch-linux">Install Arch Linux</h1>
+
+<p>First <a href="https://wiki.archlinux.org/index.php/USB_flash_installation_media">install Arch Linux to a USB drive</a> and then follow the Arch Linux wiki&rsquo;s excellent <a href="https://wiki.archlinux.org/index.php/installation_guide">installation guide</a>. I didn&rsquo;t have any problems with verifying that the Surface booted in UEFI mode or with the keyboard, but I did have to fight with the WiFi</p>
+
+<h2 id="wpa-2-enterprise-wifi-on-the-surface-3-from-arch-linux">WPA 2 Enterprise WiFi on the Surface 3 from Arch Linux</h2>
+
+<p>The BYU CS department where I was performing this operation uses WPA2 Enterprise for their wifi network, which made things a bit more complicated. From the <a href="https://wiki.archlinux.org/index.php/WPA_supplicant#Advanced_usage">WPA_supplicant page</a> I found the the following WPA_supplicant configuration file allowed for connection to the network (_Note:_ You&rsquo;d need to replace the text in between and including the angle brackets with your relevant information):</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf"># File: /etc/wpa_supplicant/wpa_supplicant.conf
+
+ctrl_interface=DIR=/run/wpa_supplicant
+ap_scan=1
+fast_reauth=1
+network={
+  scan_ssid=1
+  ssid=&#34;&lt;ssid&gt;&#34;                     # Replace this
+  key_mgmt=WPA-EAP
+  eap=PEAP
+  identity=&#34;&lt;username&gt;&#34;             # Replace this
+  anonymous_identity=&#34;&lt;username&gt;&#34;   # Replace this
+  password=&#34;&lt;password&gt;&#34;             # Replace this
+  phase1=&#34;peaplabel=0&#34;
+  phase2=&#34;auth=MSCHAPV2&#34;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>Then, with my wifi adapter being located at <code>/dev/wlp1s0</code>, the following commands brought up the adapter, configured <code>wpa_supplicant</code>, and then obtained an IP address via DHCP:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"># ip link set dev wlp1s0 up
+# wpa_supplicant -B -i wlp1s0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+# dhcpcd wlp1s0</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="partitioning-the-ssd">Partitioning the SSD</h2>
+
+<p>Continuing through the <a href="https://wiki.archlinux.org/index.php/installation_guide#Format_the_partitions">installation instructions</a>, the next bit of trouble I had was with partitioning the SSD. Again, I didn&rsquo;t care about not erasing the Windows partition since I do not want to dual boot Windows and Linux, so I erased the partition table for the drive and started to create my own. The problem that I ran into was that <code>gdisk</code> did not seem to correctly write the new partition table, but using <code>parted</code> did. If the SSD for my Surface was located at <code>/dev/sdX</code> (change as needed to your correct device name, which you can find by running <code># fdisk -l</code>), then I used the following commands to delete the old partition table, create a new one, and then create</p>
+
+<ol>
+<li>The EFI System Partition (ESP)</li>
+<li>A swap partition</li>
+<li>A single root partition</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"># parted /dev/sdX
+(parted) print                                      # View existing partitions
+(parted) rm x                                       # Replace x with partition number
+                                                    # Remove all of the partitions
+(parted) mklabel gpt                                # Create new GPT table
+(parted) mkpart ESP fat32 1MiB 550MiB               # ESP part. w/ 550 MB
+(parted) set 1 boot on                              # Set as ESP (boot) partition
+(parted) mkpart primary linux-swap 550MiB 1.5GiB    # Swap partition w/ ~1GB
+(parted) mkpart primary ext4 1.5GiB 100%            # Remaining space to root/home part.</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="formatting-the-partitions">Formatting the partitions</h2>
+
+<p>Continue with the <a href="https://wiki.archlinux.org/index.php/installation_guide#Format_the_partitions">installation instructions</a> to format the partitions:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"># mkfs.vfat /dev/sdX1
+# mkswap /dev/sdX2
+# swapon /dev/sdX2
+# mkfs.ext4 /dev/sdX3</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="mount-the-partitions">Mount the partitions</h2>
+
+<p>Next, we&rsquo;ll mount our root partition and then the ESP:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"># mount /dev/sdX3 /mnt
+# mkdir /mnt/boot
+# mount /dev/sdX1 /mnt/boot</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="boot-loader">Boot loader</h2>
+
+<p>I continued with the <a href="https://wiki.archlinux.org/index.php/installation_guide">installation instructions</a> without any deviations until reaching the <a href="https://wiki.archlinux.org/index.php/installation_guide#Boot_loader">Boot loader section</a>. From the bash shell on your mounted partition (where you should already be by running <code># arch-chroot /mnt</code>), follow the recommendations to install the <a href="https://www.archlinux.org/packages/?name=intel-ucode">intel-ucode</a> package:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"># pacman -S intel-ucode</code></pre></td></tr></table>
+</div>
+</div>
+<p>Then exit the bash terminal from your mounted partition, which will return you to the zsh session from the Arch Linux on your USB drive. From here, we&rsquo;ll need to find the partition UUID, as described in the <a href="https://wiki.archlinux.org/index.php/Systemd-boot#Configuration">Systemd-boot page</a></p>
+
+<blockquote>
+<p>You can find the PARTUUID for your root partition with the command <code>blkid -s PARTUUID -o value /dev/sdxY</code>, where <code>x</code> is the device letter and <code>Y</code> is the partition number. This is required only for your root partition, not esp.</p>
+</blockquote>
+
+<p>Run the indicated command, then replace <code>XXXX</code> in the code segment below with the appropriate UUID, and then save the file at <code>/mnt/boot/loader/entries/arch.conf</code>:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /intel-ucode.img
+initrd  /initramfs-linux.img
+options root=PARTUUID=XXXX rootfstype=ext4 add_efi_memmap</code></pre></td></tr></table>
+</div>
+</div>
+<p>Note that we added an additional <code>initrd</code> line to <a href="https://wiki.archlinux.org/index.php/Microcode#systemd-boot">enable the Intel microcode updates</a> in conjunction with the <code>intel-ucode</code> package we previously installed.</p>
+
+<h2 id="finish-up">Finish Up</h2>
+
+<p>With that done, continue with the last bit of the installation instructions to unmount the partitions as needed and reboot. That should allow you to reboot from your Surface SSD into an Arch Linux shell.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>This is as far as I&rsquo;ve gotten at the moment, due to competing commitments with my time. As I go further with the install, to include a desktop environment, I&rsquo;ll update this post to reflect those changes and anything else I find. Chad&rsquo;s blog post continues with some excellent tips on how to improve the day-to-day user experience with the Surface running Arch Linux, and the Arch Linux wiki will have further instructions on other things you might want to do on your own.</p>
+
+      </div>
+      <div id="comments" class="comments">
+    <h2>Comments</h2>
+    <div id="comments-preamble">
+        To leave a comment, <a href="https://github.com/seanlane/seanlane.github.io/issues/6">visit this post's issue page on GitHub.</a> 
+        A GitHub account is required, since <a href="https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/">I host this site's comments on GitHub.</a>
+    <div>
+</div>
+<script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript">
+  function loadComments(data) {
+    for (var i=0; i < data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = "https://www.github.com/" + data[i].user.login;
+      var clink = "https://github.com/seanlane\/seanlane.github.io/issues/6#issuecomment-" + 
+          data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;
+      var cdate = Date.parse(data[i].created_at).setTimezone('UTC').toString("yyyy-MM-dd HH:mm:ss");
+
+      $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" 
+        + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' 
+        + "</div><a class='commentuser' href=\"" + cuserlink + "\">" 
+        + cuser + "</a><a class='commentdate' href=\"" + clink 
+        + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+    }
+  }
+
+  $.ajax("https://api.github.com/repos/seanlane\/seanlane.github.io/issues/6/comments", {
+    headers: {Accept: "application/vnd.github.full+json"},
+    success: function(msg){
+      loadComments(msg);
+    }
+  });
+</script>
+      <footer>
+        
+      </footer>
+    </article>
+    
+  </section>
+
+    </main>
+    <footer class="footer">
+  
+   © 2018
+  
+     · 
+    Powered by <a href="https://gohugo.io/">Hugo</a> &amp; Extended from <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+  
+  
+</footer>
+
+    
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presentations on Sean Lane</title>
+    <link>https://sean.lane.sh/presentations/</link>
+    <description>Recent content in Presentations on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Nov 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://sean.lane.sh/presentations/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>BYU CS 611: Inclusion Relationships</title>
+      <link>https://sean.lane.sh/presentations/2016/11/BYU-CS-611-Inclusion-Relationships/</link>
+      <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/presentations/2016/11/BYU-CS-611-Inclusion-Relationships/</guid>
+      <description>class: center, middle # Inclusion Relationships ## Sean Lane Follow along: goo.gl/JXyeUc --- class: center, middle # Quiz 1. (2 pts.) Give an informal ~~proof~~ _explanation of the reasoning behind_ Corollary 5.7: $$ NP \subseteq PSPACE $$ 2. (1 pt.) What is the name of the function used by Savitch&#39;s Theorem to verify if $w$ is accepted? * A. CHECK * B. TEST * C. VERIFY * D. TEMP * E.</description>
+    </item>
+    
+    <item>
+      <title>BYU CS 611: Claude Shannon</title>
+      <link>https://sean.lane.sh/presentations/2016/10/BYU-CS-611-Claude-Shannon/</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/presentations/2016/10/BYU-CS-611-Claude-Shannon/</guid>
+      <description>/* Timeline CSS */ .hidden { display: none; } .lens-profile-timeline { list-style: none; padding: 0; margin: 60px 0 80px; border-bottom: 8px solid black; position: absolute; bottom: 0; width: 80%; } li.timeline { position: absolute; width: 16px; height: 16px; border: 8px solid black; border-radius: 16px; background: #fff; margin-top: -12px; } li.current.timeline { border-color: black; background-color: cadetblue; border-radius: 5px; } time, p.timeline { left: -27px; top: -40px; position: absolute; width: 70px; text-align: center; } time { margin-top: 70px; font-size: 18px; } .</description>
+    </item>
+    
+  </channel>
+</rss>

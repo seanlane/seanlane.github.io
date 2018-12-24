@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/</link>
+    <description>Recent content in Tags on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://sean.lane.sh/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Backups</title>
+      <link>https://sean.lane.sh/tags/backups/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/backups/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book Notes</title>
+      <link>https://sean.lane.sh/tags/book-notes/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/book-notes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Career</title>
+      <link>https://sean.lane.sh/tags/career/</link>
+      <pubDate>Wed, 09 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cli</title>
+      <link>https://sean.lane.sh/tags/cli/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://sean.lane.sh/tags/javascript/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jupyter</title>
+      <link>https://sean.lane.sh/tags/jupyter/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/jupyter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Latex</title>
+      <link>https://sean.lane.sh/tags/latex/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/latex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lds</title>
+      <link>https://sean.lane.sh/tags/lds/</link>
+      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/lds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://sean.lane.sh/tags/linux/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://sean.lane.sh/tags/markdown/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://sean.lane.sh/tags/python/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Restic</title>
+      <link>https://sean.lane.sh/tags/restic/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/restic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scripts</title>
+      <link>https://sean.lane.sh/tags/scripts/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self Hosting</title>
+      <link>https://sean.lane.sh/tags/self-hosting/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/self-hosting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://sean.lane.sh/tags/web/</link>
+      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/tags/web/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

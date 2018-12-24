@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/08/Snippets-for-Markdown-to-LaTeX-with-Pandoc/</loc>
+    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/08/Extracting-Entries-from-jrnl.com/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/08/Hosting-a-blog-for-free-in-15-minutes-with-Amazon-AWS-Caddy-Server-Docker-Compose-and-Ghost/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/07/Notes-from-Deep-Work-by-Cal-Newport/</loc>
+    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/07/Tech-Tips-from-Another-Lifetime/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/07/Home-backup-strategy/</loc>
+    <lastmod>2018-07-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/06/Example-for-LaTeX-Funeral-or-Memorial-Program/</loc>
+    <lastmod>2018-06-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/02/Dynamic-weight-tracking-form-and-dashboard/</loc>
+    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/02/Dynamically-updating-Matplotlib-figures-in-Jupyter-notebooks/</loc>
+    <lastmod>2018-02-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</loc>
+    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2018/01/Installing-Arch-Linux-on-a-Microsoft-Surface-3/</loc>
+    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2017/10/El-Cuarto-Misionero-por-el-%C3%89lder-Lawrence-Corbridge/</loc>
+    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</loc>
+    <lastmod>2017-08-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2017/05/Review-of-the-International-version-of-the-4th-edition-of-Probability-and-Statistics-by-DeGroot-and-Schervish/</loc>
+    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/presentations/2016/11/BYU-CS-611-Inclusion-Relationships/</loc>
+    <lastmod>2016-11-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/presentations/2016/10/BYU-CS-611-Claude-Shannon/</loc>
+    <lastmod>2016-10-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2016/05/PySpark-and-Latent-Dirichlet-Allocation/</loc>
+    <lastmod>2016-05-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/</loc>
+    <lastmod>2016-01-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2015/09/Technical-Interview-Cheat-Sheet/</loc>
+    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2015/09/Missionary-Service/</loc>
+    <lastmod>2015-09-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2015/09/Eagle-Scout/</loc>
+    <lastmod>2015-09-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/2015/09/Hello-World/</loc>
+    <lastmod>2015-09-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/backups/</loc>
+    <lastmod>2018-07-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/book-notes/</loc>
+    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/career/</loc>
+    <lastmod>2015-09-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/cli/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/javascript/</loc>
+    <lastmod>2017-02-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/jupyter/</loc>
+    <lastmod>2018-02-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/latex/</loc>
+    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/lds/</loc>
+    <lastmod>2017-10-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/linux/</loc>
+    <lastmod>2018-01-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/markdown/</loc>
+    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/posts/</loc>
+    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/presentations/</loc>
+    <lastmod>2016-11-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/python/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/restic/</loc>
+    <lastmod>2018-07-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/resume/</loc>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/scripts/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/</loc>
+    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/self-hosting/</loc>
+    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/</loc>
+    <lastmod>2018-07-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sean.lane.sh/tags/web/</loc>
+    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

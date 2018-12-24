@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cli on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/cli/</link>
+    <description>Recent content in Cli on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://sean.lane.sh/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hosting a blog for free* in 15 minutes with Amazon AWS, Caddy Server, Docker Compose, and Ghost</title>
+      <link>https://sean.lane.sh/posts/2018/08/Hosting-a-blog-for-free-in-15-minutes-with-Amazon-AWS-Caddy-Server-Docker-Compose-and-Ghost/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2018/08/Hosting-a-blog-for-free-in-15-minutes-with-Amazon-AWS-Caddy-Server-Docker-Compose-and-Ghost/</guid>
+      <description>*Not including the domain name, of course. Also, this makes use of the portion Amazon AWS Free Tier that expires after 12 months, so only really free for that time. Should continue to be very inexpensive, though.
+My wife previously utilized an online service to host a private journal, which has since been acquired. She wanted to switch to something else, and after scraping the new service which lacks a proper API or export functionality, we needed something else for her to use.</description>
+    </item>
+    
+    <item>
+      <title>Tech Tips from Another Lifetime</title>
+      <link>https://sean.lane.sh/posts/2018/07/Tech-Tips-from-Another-Lifetime/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2018/07/Tech-Tips-from-Another-Lifetime/</guid>
+      <description>The following is mostly for my own personal reference. About 5 years ago, I worked as a technical support agent for a fairly large webhosting company that used to be located in Utah, and at the time I kept a small Wordpress site with some tips or code snippets that often came in handy. I was cleaning out soem old files, and came across the SQL dump of that site when I left that job.</description>
+    </item>
+    
+    <item>
+      <title>Setting up a new Python virtual environment for Jupyter notebooks</title>
+      <link>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</guid>
+      <description>A lot of my lab work and course work involved the use of Jupyter notebooks, though the Python dependencies needed conflict with other areas. I&amp;rsquo;ve been using virtualenvwrapper to isolate these, and other project, environments from each other. This post goes through the process of installing everything needed to get up and running with a clean Python environment for Jupyter notebooks with separate kernels for each environment, including the installation of jupyter_contrib_nbextensions which adds community developed features.</description>
+    </item>
+    
+    <item>
+      <title>Installing Arch Linux on a Microsoft Surface 3</title>
+      <link>https://sean.lane.sh/posts/2018/01/Installing-Arch-Linux-on-a-Microsoft-Surface-3/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2018/01/Installing-Arch-Linux-on-a-Microsoft-Surface-3/</guid>
+      <description>A few years ago, I was given a Microsoft Surface 3 tablet that has since fallen into disuse. I was appreciative of the gift, though to be honest the Intel Atom CPU it came with is fairly underpowered when it comes to running Windows 10, so I decided to install a light Linux distro on it to get the tablet back into running order. I came across the blog post Running Arch Linux on a Surface 3 by Chad Voegele, which was fairly useful in getting started, and I wanted to write a post of my own to share some addition details and places where I diverged from Chad&amp;rsquo;s post along the way.</description>
+    </item>
+    
+    <item>
+      <title>Send a fax from the command line with Python and Phaxio</title>
+      <link>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</guid>
+      <description>If you want to send a simple fax quickly, cheaply, and painlessly, Phaxio and Python make a nice combo. Below is a litte script that I wrote, based on this Ruby script by Pete Keen that is slightly out of date. There are Phaxios Python libraries, but I ran into a couple issues, and this seems to be the most brain-dead simple solution. Pros: No external dependencies. Cons: It uses the shell=True parameter for subprocess.</description>
+    </item>
+    
+    <item>
+      <title>Filtering domain names on Domcomp.com with regex</title>
+      <link>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</guid>
+      <description>Lately, I&amp;rsquo;ve been looking around for another domain name that&amp;rsquo;s a little shorter and more flexible than seanlane.net. My purposes for that can be explained another time, but I have been trying to search domain names that have top-level domains (the .com part of google.com, for example) that are shorter in length, alongside some other attributes. There are a number of good tools to use for searching for available domain names, but I have not found any that allow for searching by the length of top-level domain.</description>
+    </item>
+    
+  </channel>
+</rss>

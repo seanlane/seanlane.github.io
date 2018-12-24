@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sean Lane">
+    <meta name="description" content="Sean Lane&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+    <title>
+  Hosting a blog for free* in 15 minutes with Amazon AWS, Caddy Server, Docker Compose, and Ghost · Sean Lane
+</title>
+
+    <link rel="canonical" href="https://sean.lane.sh/posts/2018/08/Hosting-a-blog-for-free-in-15-minutes-with-Amazon-AWS-Caddy-Server-Docker-Compose-and-Ghost/">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  
+    
+    
+    <link rel="stylesheet" href="https://sean.lane.sh/css/coder.min.1c91e5515e84bd00b2640257e6a9bcc3d8117de2f53a975a352c2247502cc864.css" integrity="sha256-HJHlUV6EvQCyZAJX5qm8w9gRfeL1OpdaNSwiR1AsyGQ=" crossorigin="anonymous" media="screen" />
+  
+  
+  
+  
+    <link rel="stylesheet" href="https://sean.lane.sh/style.css">
+  
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-16x16.png" sizes="16x16">
+  
+    <meta name="generator" content="Hugo 0.51" />
+  </head>
+  <body class=" ">
+    <nav class="navigation pure-g">
+  <section class="pure-u-1 pure-u-md-1-3 nav-left">
+    
+      <a class="nav-avatar" href="https://sean.lane.sh">
+        <img src="https://sean.lane.sh/images/sean.png" alt="avatar" />
+      </a>
+    
+    <a class="nav-title" href="https://sean.lane.sh">
+      Sean Lane
+    </a>
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-center">
+    
+      
+        <a href="mailto:hi@sean.lane.sh"><i class="far fa-envelope fa-lg"></i></a>
+      
+        <a href="https://github.com/seanlane/"><i class="fab fa-github fa-lg"></i></a>
+      
+        <a href="https://keybase.io/seanlane"><i class="fab fa-keybase fa-lg"></i></a>
+      
+        <a href="https://www.linkedin.com/in/SeanTLane"><i class="fab fa-linkedin fa-lg"></i></a>
+      
+        <a href="https://mastodon.technology/@seanlane"><i class="fab fa-mastodon fa-lg"></i></a>
+      
+        <a href="https://sean.lane.sh/posts/index.xml"><i class="fas fa-rss fa-lg"></i></a>
+      
+        <a href="https://twitter.com/_seanlane"><i class="fab fa-twitter fa-lg"></i></a>
+      
+    
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-right">
+    
+      
+        <a href="https://sean.lane.sh/">Home</a>
+      
+        <a href="https://sean.lane.sh/resume/">Resume</a>
+      
+        <a href="https://sean.lane.sh/posts/">Posts</a>
+      
+    
+  </section>
+</nav>
+
+    <main class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Hosting a blog for free* in 15 minutes with Amazon AWS, Caddy Server, Docker Compose, and Ghost</h1>
+        </div>
+        <div class="post-meta pure-g">
+          <div class="posted-on pure-u-1 pure-u-sm-1-3">
+            <i class="fas fa-calendar"></i>
+            <time datetime='2018-08-13T00:00:00Z'>
+              August 13, 2018
+            </time>
+          </div>
+          <div class="reading-time pure-u-1 pure-u-sm-1-3 post-center">
+            <i class="fas fa-clock"></i>
+            Reading time: 5 minutes
+          </div>
+          <div class="pure-u-1 pure-u-sm-1-3 post-right">
+            
+            <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://sean.lane.sh/tags/self-hosting/">Self hosting</a>
+      <span class="separator">•</span>
+    <a href="https://sean.lane.sh/tags/cli/">CLI</a></div>
+
+          </div>
+        </div>
+      </header>
+      <div>
+        
+
+<p>*Not including the domain name, of course. Also, this makes use of the portion <a href="https://aws.amazon.com/free/">Amazon AWS Free Tier</a> that expires after 12 months, so only really free for that time. Should continue to be very inexpensive, though.</p>
+
+<p>My wife previously utilized an online service to host a private journal, which has since been acquired. She wanted to switch to something else, and after scraping the new service which lacks a proper API or export functionality, we needed something else for her to use. Preferably much more open to the previous service, but also easy to use and maintain. <a href="https://ghost.org">Ghost</a> seemed to be a good candidate, though we don&rsquo;t have the budget for their hosting services. Luckily for us, Amazon AWS has a free tier of EC2 VPS instances which would perfectly for this use case, assuming this is for a smaller blog. Don&rsquo;t hold me accountable if you need more power for the amount of views you&rsquo;re getting. I also state that you can do this in 10 minutes, which is true assuming your domain name is already pointing at the correct IP address. If that is not the case, you will have to change the DNS record accordinly and wait for it to propogate (which can take up to 48 hours when the DNS record is being changed as opposed to being created). Anyways, this should take about 10-15 minutes of effort on your time, not including time for the DNS records to update across the Internet.</p>
+
+<p>Note that this post isn&rsquo;t a complete walkthrough, but goes over general steps. Adapt as needed to your circumstances, and I&rsquo;ll answer questions as I&rsquo;m able. You will likely want to do other things with this VPS, like enforcing public-private key pair authentication, using a firewall, etc, in order to have it running on the Internet.</p>
+
+<h2 id="step-1-create-an-amazon-aws-instance-or-vps-to-host-the-site">Step 1: Create an Amazon AWS instance or VPS to host the site</h2>
+
+<p>Follow the instructions found here to launch and connect to the instance: <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html#ec2-launch-instance">AWS Documentation: Getting Started with Amazon EC2 Linux Instances</a></p>
+
+<p>Just about any standard VPS will do, I&rsquo;m using AWS for there free tier that I&rsquo;m familiar with. I did this with the Ubuntu 16.04 LTS image as well, though any standard Linux image should work. From this point, I will assume you have SSH access to your VPS to enter commands and such.</p>
+
+<p>Note that while port 22 should already be open for SSH access, you will also need to open ports 80 and 443 for HTTP and HTTPS traffic, respectively. Instructions on that can be found here: <a href="https://aws.amazon.com/premiumsupport/knowledge-center/connect-http-https-ec2/">How do I allow my users to connect on HTTP (80) or HTTPS (443)?</a></p>
+
+<h2 id="step-2-add-a-non-root-user">Step 2: Add a non-root user</h2>
+
+<p>Replace <code>USERNAME</code> with the name you want to use, entering in the following command:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal">$ adduser USERNAME</code></pre></td></tr></table>
+</div>
+</div>
+<p>Set the password for the new account then add it to the <code>sudo</code> group:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal">$ usermod -aG sudo USERNAME</code></pre></td></tr></table>
+</div>
+</div>
+<p>again, replacing <code>USERNAME</code> with your actual username.</p>
+
+<p>Logout and login back to the server using the new account and update your OS. I’m using Ubuntu, so the command is:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal">sudo apt-get update -y</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="step-3-install-docker-and-docker-compose">Step 3: Install Docker and Docker Compose</h2>
+
+<p>I&rsquo;m going to assume you already know what Docker is (if not, read here: <a href="https://www.docker.com/resources/what-container">What is a container?</a>). Follow these instructions to install <code>docker</code> and <code>docker-compose</code> for your Linux VPS:</p>
+
+<ul>
+<li><a href="https://docs.docker.com/install/#supported-platforms">Install Docker CE</a> (Pick your distribution from those shown for the servers)</li>
+<li><a href="https://docs.docker.com/compose/install/">Install Docker Compose</a></li>
+</ul>
+
+<h2 id="step-4-add-your-user-to-the-docker-group">Step 4: Add your user to the Docker group</h2>
+
+<p>Add the Docker group if doesn’t exist already:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal">$ sudo groupadd docker</code></pre></td></tr></table>
+</div>
+</div>
+<p>Add the connected user <code>${USER}</code> to the Docker group:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal">$ sudo gpasswd -a ${USER} docker</code></pre></td></tr></table>
+</div>
+</div>
+<p>Lastly, restart the Docker daemon:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal">$ sudo service docker restart</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="step-5-clone-the-docker-ghost-caddy-project">Step 5: Clone the docker-ghost-caddy project</h2>
+
+<p>The project is found at <a href="https://github.com/seanlane/docker-ghost-caddy">https://github.com/seanlane/docker-ghost-caddy</a>. Assuming we&rsquo;ll remain in your home directory, run the following command to clone the project:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7c7c79">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-terminal" data-lang="terminal">$ git clone https://github.com/seanlane/docker-ghost-caddy.git</code></pre></td></tr></table>
+</div>
+</div>
+<p>This project provides a <code>docker-compose.yml</code> file which brings up two Docker containers. One runs the proxy with <a href="https://caddyserver.com">Caddy</a> as the server, and the other runs everything needed for Ghost.</p>
+
+<h2 id="step-6-adjust-the-config-files-as-needed">Step 6: Adjust the config files as needed</h2>
+
+<p>Following the instructions found in the <a href="https://github.com/seanlane/docker-ghost-caddy/blob/master/README.md">README</a> of the project:</p>
+
+<ol>
+<li>In <code>proxy/Caddyfile</code> change <code>your.domain.here</code> and <code>you@example.com</code> to your blog&rsquo;s domain and your email (email used for generation of SSL certificate)</li>
+<li>In <code>docker-compose.yml</code> change <code>https://your.domain.here</code> to your https domain</li>
+<li>Also in <code>docker-compose.yml</code>, change the <code>mail__options__auth__user</code> and <code>mail__options__auth__pass</code> parameter values to your Mailgun SMTP credentials as needed to send emails from Ghost, as described here: <a href="https://docs.ghost.org/docs/mail-config">https://docs.ghost.org/docs/mail-config</a>. If you don&rsquo;t need this, then you may be able to simply delete the <code>mail__*</code> options, though I haven&rsquo;t personally tried this without them.</li>
+<li>Ensure your DNS record is pointed at your server. If it is not, Let&rsquo;s Encrypt will not be able to generate your SSL cert and Caddy will fail to start.</li>
+<li>Run <code>docker-compose build</code> to build the docker images</li>
+<li>Run <code>docker-compose up</code> to run everything in the foreground, then press Ctrl-C to exit gracefully</li>
+</ol>
+
+<p><em>Note:</em> If you run into a problem with <code>docker-compose</code> recognizing the version of the <code>docker-compose.yml</code> file, following the steps of this Stack Overflow answer to update <code>docker-compose</code> worked for me (change the version of <code>docker-compose</code> that you download as needed: <a href="https://stackoverflow.com/a/49407448">Stack Overflow: Version in “./docker-compose.yml” is unsupported</a>.</p>
+
+<h2 id="step-7-run-it">Step 7: Run it</h2>
+
+<p>Run <code>docker-compose up -d</code> to run in detached mode, run <code>docker-compose stop</code> to stop. Assuming everything is working, you should be able to navigate to your website running Ghost at your specified domain name.</p>
+
+      </div>
+      <div id="comments" class="comments">
+    <h2>Comments</h2>
+    <div id="comments-preamble">
+        To leave a comment, <a href="https://github.com/seanlane/seanlane.github.io/issues/14">visit this post's issue page on GitHub.</a> 
+        A GitHub account is required, since <a href="https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/">I host this site's comments on GitHub.</a>
+    <div>
+</div>
+<script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript">
+  function loadComments(data) {
+    for (var i=0; i < data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = "https://www.github.com/" + data[i].user.login;
+      var clink = "https://github.com/seanlane\/seanlane.github.io/issues/14#issuecomment-" + 
+          data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;
+      var cdate = Date.parse(data[i].created_at).setTimezone('UTC').toString("yyyy-MM-dd HH:mm:ss");
+
+      $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" 
+        + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' 
+        + "</div><a class='commentuser' href=\"" + cuserlink + "\">" 
+        + cuser + "</a><a class='commentdate' href=\"" + clink 
+        + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+    }
+  }
+
+  $.ajax("https://api.github.com/repos/seanlane\/seanlane.github.io/issues/14/comments", {
+    headers: {Accept: "application/vnd.github.full+json"},
+    success: function(msg){
+      loadComments(msg);
+    }
+  });
+</script>
+      <footer>
+        
+      </footer>
+    </article>
+    
+  </section>
+
+    </main>
+    <footer class="footer">
+  
+   © 2018
+  
+     · 
+    Powered by <a href="https://gohugo.io/">Hugo</a> &amp; Extended from <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+  
+  
+</footer>
+
+    
+  </body>
+</html>

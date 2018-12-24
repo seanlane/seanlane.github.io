@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/seanlane
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://sean.lane.sh
+  * I am seanlane (https://keybase.io/seanlane) on keybase.
+  * I have a public key with fingerprint C0A5 90BB 59F5 0948 3A56  AF8C 40F3 AF5E 1067 650C
+
+To do so, I am signing this object:
+
+{
+    &quot;body&quot;: {
+        &quot;key&quot;: {
+            &quot;eldest_kid&quot;: &quot;010139aa7b3178962c0b317e2ce1efda22226d0498893a20dacbe4c24152bc0488de0a&quot;,
+            &quot;fingerprint&quot;: &quot;c0a590bb59f509483a56af8c40f3af5e1067650c&quot;,
+            &quot;host&quot;: &quot;keybase.io&quot;,
+            &quot;key_id&quot;: &quot;40f3af5e1067650c&quot;,
+            &quot;kid&quot;: &quot;010139aa7b3178962c0b317e2ce1efda22226d0498893a20dacbe4c24152bc0488de0a&quot;,
+            &quot;uid&quot;: &quot;3f352c9e05a020028d1fab02a4138d19&quot;,
+            &quot;username&quot;: &quot;seanlane&quot;
+        },
+        &quot;service&quot;: {
+            &quot;hostname&quot;: &quot;sean.lane.sh&quot;,
+            &quot;protocol&quot;: &quot;https:&quot;
+        },
+        &quot;type&quot;: &quot;web_service_binding&quot;,
+        &quot;version&quot;: 1
+    },
+    &quot;ctime&quot;: 1500167690,
+    &quot;expire_in&quot;: 157680000,
+    &quot;prev&quot;: &quot;8ab4a501055a11b0516657fcd27f4eda40e9a1403b63f8439a37f22863babe4c&quot;,
+    &quot;seqno&quot;: 5,
+    &quot;tag&quot;: &quot;signature&quot;
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.73
+Comment: https://keybase.io/crypto
+
+yMIjAnicrVJbSBVBGD5eKpREg7JMNFnwJc1mL7OXUyRhl4cyMXsotY6zu7Oe1ePu
+ac+qmVqUveRDImRKIZ5MiBKiIIITIVpeHpJMxMgoywuFmQhRUkrWrBT00GPzMv/M
+fN833//x98ZEuKLDsh9lhoUWmkDY057mctexkq7oako21SrKXU2V4pUN+1QcsD2l
+ukq5KUADmpUQEmSWFkSJZxTgVJhRMI01FTFk8SrgJFGUWMQAFSky5hSGoyEjK4AT
+RRUDRKVTmm4UY8tv6YZNZBWAoARkGUoaBBInsgjySBMVDmgs0iCmAS/wECiE6DUD
+DoOYk1EAZ+gmuSMHz4q9f+D/s+/yFTlWYyGjSBhABBgAGFGlNSQDBnE0S2rJAQaw
+ZaAyTNABjAwfMjBVm05qq0JXsBOs08lfiAwHkhHwEq7fMm1TMX3kxWvb/oDbYdpV
+fgdaiWXPbxGPrBsqyZEwKrAV0E2DctMEqdi6o0pDAGiSgwTSKXzKr1vYozsIKPAi
+IMv5B1cQSRHJHIIkIggRTcsA0jwPBU1RGUHjsIo4gCVEc4CVeVYTOZIjK2gMI/Ks
+jJyUKKetk4ZJuSGxiYqdhvRiA9nlFun5cXdhpCss2rV6VbgzX67oqLg/U6edXbOc
+uXvDp2edyUd6SvY+mTnzNarXFxrMnu+OupGzuCu4Nflo1qbyPqEr9njlxNJQ35bD
+DSH3utcfgplw2/OGCwcmrJx9KWM1w61ZUltyY+f+67FR8e/vDW7+ebqudk9q/xAY
+NkdbFt4uzfY3v8sbutUYnKqh4+YWQzuCV7pfLRR9TMqdGmMbW/IsN0rbOFhWXzWD
+ew7db08ZjcRXE6tcnYX5X77FBtvrDiZ93ikm3Ekb/947sjZCufygkymYy8ieKVj/
+5m5R0vjD5tSLbTENs1y8/qJj2rt84lJdXvPky+mU8/nemwkJJR3bw+fbb7snUnM9
+TTjxXMW1yYGR+oH+1hr7R8svUuJEOQ==
+=FaPG
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/seanlane
+
+==================================================================

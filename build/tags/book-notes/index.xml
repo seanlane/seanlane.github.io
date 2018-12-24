@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Book Notes on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/book-notes/</link>
+    <description>Recent content in Book Notes on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://sean.lane.sh/tags/book-notes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notes from Deep Work by Cal Newport</title>
+      <link>https://sean.lane.sh/posts/2018/07/Notes-from-Deep-Work-by-Cal-Newport/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2018/07/Notes-from-Deep-Work-by-Cal-Newport/</guid>
+      <description>The following are some notes that I&amp;rsquo;ve gathered after reading Deep Work by Cal Newport. I enjoyed the book, felt it has some concepts I want to apply in my life, so I condensed the precepts I wanted to remember into a form that would fit onto a single sheet of US letter paper. A link to that PDF can be found here: Deep Work Notes PDF
+Deep Work &amp;ldquo;Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit.</description>
+    </item>
+    
+    <item>
+      <title>Review of the International version of the 4th edition of Probability and Statistics by DeGroot and Schervish</title>
+      <link>https://sean.lane.sh/posts/2017/05/Review-of-the-International-version-of-the-4th-edition-of-Probability-and-Statistics-by-DeGroot-and-Schervish/</link>
+      <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2017/05/Review-of-the-International-version-of-the-4th-edition-of-Probability-and-Statistics-by-DeGroot-and-Schervish/</guid>
+      <description>As a computer science graduate student at Brigham Young University, I am taking CS 677: Bayesian Methods in Computer Science, which covers some aspects of using probability within computer science, as you probably guessed from its title. The required textbook for the course is Morris DeGroot&amp;rsquo;s 4th edition of Probability and Statistics, which at the time of writing this post is selling for about $170 new, $112 used on Amazon.</description>
+    </item>
+    
+  </channel>
+</rss>

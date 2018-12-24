@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/python/</link>
+    <description>Recent content in Python on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://sean.lane.sh/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Extracting Entries from jrnl.com</title>
+      <link>https://sean.lane.sh/posts/2018/08/Extracting-Entries-from-jrnl.com/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2018/08/Extracting-Entries-from-jrnl.com/</guid>
+      <description>Relating to my previous post today about setting up a blog using AWS, Docker Compose, Caddy Server, and Ghost, I found the need to do some web scraping. A number of years ago, my wife began journaling her thoughts in an online service called LDSJournal.com (at least I believe that was the name). About 2 years ago, this service was acquired by a new site called jrnl.com. It seems to be a fairly neat service, but one thing we were concerned with is preserving the data should the account ever disappear.</description>
+    </item>
+    
+    <item>
+      <title>Dynamically updating Matplotlib figures in Jupyter notebooks</title>
+      <link>https://sean.lane.sh/posts/2018/02/Dynamically-updating-Matplotlib-figures-in-Jupyter-notebooks/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2018/02/Dynamically-updating-Matplotlib-figures-in-Jupyter-notebooks/</guid>
+      <description>Updating matplotlib figures dynamically seems to be a bit of a hassle, but the code below seems to do the trick. This is an example that outputs a figure with multiple subplots, each with multiple plots. Oddly enough, at the time of writing the image will be smaller than the figure until the Jupyter cells stops running, but this can be fixed but generating the figure in one cell, and then updating the image in a subsequent cell 1.</description>
+    </item>
+    
+    <item>
+      <title>Setting up a new Python virtual environment for Jupyter notebooks</title>
+      <link>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</guid>
+      <description>A lot of my lab work and course work involved the use of Jupyter notebooks, though the Python dependencies needed conflict with other areas. I&amp;rsquo;ve been using virtualenvwrapper to isolate these, and other project, environments from each other. This post goes through the process of installing everything needed to get up and running with a clean Python environment for Jupyter notebooks with separate kernels for each environment, including the installation of jupyter_contrib_nbextensions which adds community developed features.</description>
+    </item>
+    
+    <item>
+      <title>Send a fax from the command line with Python and Phaxio</title>
+      <link>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</guid>
+      <description>If you want to send a simple fax quickly, cheaply, and painlessly, Phaxio and Python make a nice combo. Below is a litte script that I wrote, based on this Ruby script by Pete Keen that is slightly out of date. There are Phaxios Python libraries, but I ran into a couple issues, and this seems to be the most brain-dead simple solution. Pros: No external dependencies. Cons: It uses the shell=True parameter for subprocess.</description>
+    </item>
+    
+    <item>
+      <title>PySpark and Latent Dirichlet Allocation</title>
+      <link>https://sean.lane.sh/posts/2016/05/PySpark-and-Latent-Dirichlet-Allocation/</link>
+      <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2016/05/PySpark-and-Latent-Dirichlet-Allocation/</guid>
+      <description>This past semester, I had the chance to take two courses: Statistical Machine Learning from a Probabilistic Perspective (it&amp;rsquo;s a bit of a mouthful) and Big Data Science &amp;amp; Capstone. In the former, we had the chance to study the breadth of various statistical machine learning algorithms and processes that have flourished in recent years. This included a number of different topics ranging from Gaussian Mixture Models to Latent Dirichlet Allocation.</description>
+    </item>
+    
+  </channel>
+</rss>
