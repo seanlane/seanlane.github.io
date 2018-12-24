@@ -53,7 +53,8 @@ git add .
 git commit -m "Site updated at $(date -u "+%Y-%m-%d %H:%M:%S") UTC"
 
 echo "Publishing site"
-git push --force "$GIT_REMOTE" "$BRANCH_MASTER"
+#git push --force "$GIT_REMOTE" "$BRANCH_MASTER"
+git push "$GIT_REMOTE" "$BRANCH_MASTER"
 
 popd
 cleanup
