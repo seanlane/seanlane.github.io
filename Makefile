@@ -1,2 +1,8 @@
 default:
-	jekyll serve
+	hugo server
+
+debug:
+	hugo server -D
+
+deploy:
+	./deploy.sh
