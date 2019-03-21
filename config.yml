@@ -127,3 +127,6 @@ menu:
     - name: Posts
       weight: 3
       url: /posts/
+    - name: Other
+      weight: 4
+      url: /other/
