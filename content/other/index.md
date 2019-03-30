@@ -3,6 +3,8 @@ title: Other
 permalink: /other/
 ---
 
+_Note_: This page is work in progress at the moment.
+
 Here's a page for some random stuff that doesn't fit elsewhere but which I want to track.
 
 ## Reading List
@@ -15,6 +17,12 @@ Here's a page for some random stuff that doesn't fit elsewhere but which I want 
 
 Not in any given order, nor guaranteed to read. 
 
+* Billion Dollar Whale by Tom Wright and Bradley Hope
+* Human Error by James Reason
+* The Pentagon Wars by Col. James Burton
+* Never Split the Difference by Chris Voss
+* Blueprint by Nicholas Christakis
+* The Opposite of Worry: The Playful Parenting Approach to Childhood Anxieties and Fears
 * The Right It: Why So Many Ideas Fail and How to Make Sure Yours Succeed by Alberto Savoia
 * Genius: The Life and Science of Richard Feynman by James Gleick
 * Farenheit 451 by Ray Bradbury
