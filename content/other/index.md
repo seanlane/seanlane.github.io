@@ -12,11 +12,14 @@ Here's a page for some random stuff that doesn't fit elsewhere but which I want 
 ### Currently Reading
 
 * The Rust Programming Language by Klabink & Nichols
+* East of Eden by John Steinbeck
 
 ### Pending List
 
 Not in any given order, nor guaranteed to read. 
 
+* The Caine Mutiny by Herman Wouk
+* The Prosperity Paradox by Clayton Christensen
 * Billion Dollar Whale by Tom Wright and Bradley Hope
 * Human Error by James Reason
 * The Pentagon Wars by Col. James Burton
@@ -78,6 +81,7 @@ Not in any given order, nor guaranteed to read.
 
 ### Read in 2019
 
+* Skin in the Game by Nassim Taleb
 * So Good They Can't Ignore You by Cal Newport
 	* I wasn't as impressed with this book as with Deep Work. There were some high points, but it felt like an extended blog post that Dr. Newport's agent arranged to have published.
 * The Ph.D. Grind: A Ph.D. Student Memoir by Philip J. Guo
