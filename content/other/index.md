@@ -12,7 +12,8 @@ Here's a page for some random stuff that doesn't fit elsewhere but which I want 
 ### Currently Reading
 
 * The Rust Programming Language by Klabink & Nichols
-* East of Eden by John Steinbeck
+* Sapiens – A Brief History of Humankind by Yuval Noah Harari
+
 
 ### Pending List
 
@@ -81,6 +82,7 @@ Not in any given order, nor guaranteed to read.
 
 ### Read in 2019
 
+* East of Eden by John Steinbeck
 * Skin in the Game by Nassim Taleb
 * So Good They Can't Ignore You by Cal Newport
 	* I wasn't as impressed with this book as with Deep Work. There were some high points, but it felt like an extended blog post that Dr. Newport's agent arranged to have published.
