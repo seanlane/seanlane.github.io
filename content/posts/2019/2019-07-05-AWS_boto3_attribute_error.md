@@ -8,7 +8,7 @@ tags:
 math: false
 ---
 
-I've been playing around with a side project that makes use of some serverless [AWS Lambda](https://aws.amazon.com/lambda/) functions. I used a simple Flask app locally for testing, which took the place of the [API Gateway](https://aws.amazon.com/api-gateway/)'s role of getting server requests to the right function, and locally everything was testing fine. Note that within the Python AWS environment, the AWS credentials consisting of an Access Key ID and Secret Access Key are found as environment variables. In order to replicate this locally, I was creating environment variables with the Flask server, and then my functions would access these keys the same way:
+I've been playing around with a side project that makes use of some server-less [AWS Lambda](https://aws.amazon.com/lambda/) functions. I used a simple Flask app locally for testing, which took the place of the [API Gateway](https://aws.amazon.com/api-gateway/)'s role of getting server requests to the right function, and locally everything was testing fine. Note that within the Python AWS environment, the AWS credentials consisting of an Access Key ID and Secret Access Key are found as environment variables. In order to replicate this locally, I was creating environment variables with the Flask server, and then my functions would access these keys the same way:
 
 ```python
 import boto3

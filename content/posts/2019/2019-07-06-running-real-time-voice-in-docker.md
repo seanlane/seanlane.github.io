@@ -125,7 +125,7 @@ docker run -it --rm --init --runtime=nvidia \
 	--device /dev/snd voice-base
 ```
 
-The option `--device /dev/snd` should allow the container to pass sound to the docker host, though I wasn't able to get sound working going from laptop->docker_host->container. I modified the `Real-Time-Voice-Cloning` to save the outout audio as a WAV file instead of playing within the application, and then copied the file locally to listen to the results.
+The option `--device /dev/snd` should allow the container to pass sound to the docker host, though I wasn't able to get sound working going from laptop->docker_host->container. I modified the `Real-Time-Voice-Cloning` to save the output audio as a WAV file instead of playing within the application, and then copied the file locally to listen to the results.
 
 At this point, the container should be running and will occupy that terminal, so open up a new terminal shell
 
