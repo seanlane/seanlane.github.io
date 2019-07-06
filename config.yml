@@ -11,7 +11,7 @@ canonifyurls: true
 pygmentsstyle: monokai
 pygmentscodefences: true
 pygmentscodefencesguesssyntax: true
-#pygmentsOptions: "linenos=table"
+#pygmentsOptions: "linenos=table" // Uncomment if you want line numbers in code snippets
 permalinks:
   posts: /posts/:year/:month/:title
   presentations: /presentations/:year/:month/:title
