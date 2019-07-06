@@ -2,6 +2,7 @@
 date: 2018-08-13
 title: Hosting a blog for free* in 15 minutes with Amazon AWS, Caddy Server, Docker Compose, and Ghost
 commentIssueId: 14
+draft: true
 tags: 
   - Self hosting
   - CLI

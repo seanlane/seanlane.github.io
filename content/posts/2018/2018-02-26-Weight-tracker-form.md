@@ -2,6 +2,7 @@
 date: 2018-02-26
 title: Dynamic weight tracking form and dashboard
 commentIssueId: 9
+draft: true
 tags: 
   - Scripts
   - Web
