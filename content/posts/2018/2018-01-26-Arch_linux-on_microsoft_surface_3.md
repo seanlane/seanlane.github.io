@@ -1,11 +1,56 @@
 ---
 date: 2018-01-26
-title: Installing Arch Linux on a Microsoft Surface 3
+title: Installing Linux on a Microsoft Surface 3
 commentIssueId: 6
 tags: 
   - Linux
   - CLI
 aliases: /blog/2018/Arch_linux-on_microsoft_surface_3
+---
+
+_Update: July 23, 2019_
+
+I came back to this after a hiatus, and finally finished a relevant install of Linux on my Surface 3. I abandoned the effort to use Arch Linux, opting instead to try [ElementaryOS](https://elementary.io/) since the main purpose of this device will be for some children to use during long car rides.
+
+## Install Elementary OS
+
+The installation itself was easy:
+
+1. Disable Secure Boot as originally described below 
+2. Install ElementaryOS to a USB drive: https://elementary.io/docs/installation#creating-an-installation-medium
+3. Insert the USB drive into the Surface and boot to USB:
+  * Turn off the Surface 3
+  * Press and hold the volume-down button
+  * Press and release the power button
+  * When the Surface logo appears, release the volume-down button
+4. Follow the install instructions
+
+**Warning:** As I discuss below, following these steps will obliterate the Windows partition, since I don't care to keep it. If you're trying to dual boot Linux and Windows, you'll have to find further instructions on that elsewhere.
+
+## Use Jake Day's Surface kernel
+
+This project from Jake Day makes this entire effort reasonably painless: https://github.com/jakeday/linux-surface
+
+While not explictly supporting the Surface 3, it does seem to work when using kernel release 4.19.18:
+  * Using releases after 4.19.18 appear to not correctly recognize the battery on the Surface 3, so you can't display a battery percentage (Related issue: https://github.com/jakeday/linux-surface/issues/452)
+  * Using releases before 4.19.18 gave me issues with audio not functioning
+
+Kernel 4.19.18 seems to be the sweet spot of having both audio and the battery indicator functioning, and I haven't noticed other issues yet. I haven't bothered to get the Surface Pen to work, but the touchscreen and TypeCover both seem to work well.
+
+Following the instructions from the project README are easy enough:
+
+1. Find your chosen version from the release page:
+  * https://github.com/jakeday/linux-surface/releases
+  * My instructions will show 4.19.18, change for your purposes as required:
+    * https://github.com/jakeday/linux-surface/releases/tag/4.19.18-1
+2. Download the appropriate `linux-headers`, `linux-image`, and `linux-libc-` files, then verify using the corresponding MD5 files
+3. Install using dpkg:
+  * `sudo dpkg -i linux-headers-[VERSION].deb linux-image-[VERSION].deb linux-libc-dev-[VERSION].deb`
+
+That's pretty as far as I'm planning to take it, seems like it works pretty well at this point.
+
+{{< figure src="/images/2018/01/surface-linux.png" caption="Action Shot of the Surface 3 running Elementary OS" >}}
+
 ---
 
 A few years ago, I was given a Microsoft Surface 3 tablet that has since fallen into disuse. I was appreciative of the gift, though to be honest the Intel Atom CPU it came with is fairly underpowered when it comes to running Windows 10, so I decided to install a light Linux distro on it to get the tablet back into running order. I came across the blog post [Running Arch Linux on a Surface 3](https://blog.chadvoegele.com/posts/post2.html) by [Chad Voegele](http://www.chadvoegele.com/), which was fairly useful in getting started, and I wanted to write a post of my own to share some addition details and places where I diverged from Chad's post along the way.
