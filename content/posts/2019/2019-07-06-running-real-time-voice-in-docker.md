@@ -55,7 +55,7 @@ RUN apt-get clean \
         && grep "^X11UseLocalhost" /etc/ssh/sshd_config || echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
 ADD Real-Time-Voice-Cloning/requirements.txt /workspace/requirements.txt
 RUN pip install -r /workspace/requirements.txt
-RUN echo "<REPLACE THIS SENTENCE (INCLUDING ARROWS) WITH YOUR SSH PUBLIC KEY ON THE DOCKER HOST" \ 
+RUN echo "<REPLACE THIS SENTENCE (INCLUDING ARROWS) WITH YOUR SSH PUBLIC KEY ON THE DOCKER HOST>" \ 
 	>> /root/.ssh/authorized_keys
 RUN echo "export PATH=/opt/conda/bin:$PATH" >> /root/.profile
 ENTRYPOINT ["sh", "-c", "/usr/sbin/sshd && bash"]
