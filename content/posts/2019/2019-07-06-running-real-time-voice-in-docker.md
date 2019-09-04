@@ -11,6 +11,10 @@ tags:
 math: false
 ---
 
+_Update on 2019-SEP-04:_ You may come across issues with PyQT5 when running this project, something about a plugin being found but not loaded. If so, try changing the line `PyQt5` to `PyQt5=5.11.3` within the [`requirements.txt`](https://github.com/CorentinJ/Real-Time-Voice-Cloning/blob/master/requirements.txt) file of the Real Time Voice Cloning project. Thanks to [@dfcv24](https://github.com/dfcv24) for finding this issue!
+
+---
+
 I came across this awesome project called [Real Time Voice Cloning](https://github.com/CorentinJ/Real-Time-Voice-Cloning) by [Corentin Jemine](https://github.com/CorentinJ) and I wanted to give it a shot. I'm currently working on a Mac laptop, but I have access to a remote server with some GPUs that could easily run the toolbox, but I wanted an easy way to get everything setup. Docker would do the trick as far as getting it setup, and then through forwarding the X Window System via SSH, I could view and control the program locally as it ran remotely. Note that these steps should be more or less compatible with Linux or macOS, but maybe on Windows with the WSL. I'm not really sure, as I haven't tested the following on anything except Linux and macOS.
 
 #### Step 0: You should probably have access to a machine with a CUDA-compatible GPU
