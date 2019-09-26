@@ -33,19 +33,24 @@ params:
     - style.css
   roles:
     current:
+      - title: Graduate Intern
+        name: Applied Invention
+        image: /images/index/ai-logo.svg
+        url: https://www.appliedinvention.com
       - title: Director of Engineering
         name: Achilles Heel Technologies
         image: /images/index/aht.png
-        url: http://achillesheel.tech
-      - title: Computer Science PhD Student
+        url: http://aht.ai
+      - title: Graduate CS Student
         name: BYU IDeA Labs
         image: /images/index/idealabs.png
         url: https://idealabs.byu.edu
-      - title: PhD Intern
+      
+    past:
+      - title: Graduate Intern
         name: Pacific Northwest National Laboratory
         image: /images/index/pnnl.svg
         url: https://www.pnnl.gov
-    past:
       - title: Software Engineer in Test Intern
         name: Instructure
         image: /images/index/instructure.svg
