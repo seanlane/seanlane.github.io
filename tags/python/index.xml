@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/python/</link>
+    <description>Recent content in python on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Jul 2019 21:02:11 -0600</lastBuildDate>
+    
+	<atom:link href="https://sean.lane.sh/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Running the &#34;Real Time Voice Cloning&#34; project in Docker</title>
+      <link>https://sean.lane.sh/posts/2019/07/Running-the-Real-Time-Voice-Cloning-project-in-Docker/</link>
+      <pubDate>Fri, 05 Jul 2019 21:02:11 -0600</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2019/07/Running-the-Real-Time-Voice-Cloning-project-in-Docker/</guid>
+      <description>Update on 2019-SEP-04: You may come across issues with PyQT5 when running this project, something about a plugin being found but not loaded. If so, try changing the line PyQt5 to PyQt5=5.11.3 within the requirements.txt file of the Real Time Voice Cloning project. Thanks to @dfcv24 for finding this issue!
+I came across this awesome project called Real Time Voice Cloning by Corentin Jemine and I wanted to give it a shot.</description>
+    </item>
+    
+    <item>
+      <title>Odd Attribute Error from AWS boto3</title>
+      <link>https://sean.lane.sh/posts/2019/07/Odd-Attribute-Error-from-AWS-boto3/</link>
+      <pubDate>Fri, 05 Jul 2019 15:00:00 -0600</pubDate>
+      
+      <guid>https://sean.lane.sh/posts/2019/07/Odd-Attribute-Error-from-AWS-boto3/</guid>
+      <description>I&amp;rsquo;ve been playing around with a side project that makes use of some server-less AWS Lambda functions. I used a simple Flask app locally for testing, which took the place of the API Gateway&amp;rsquo;s role of getting server requests to the right function, and locally everything was testing fine. Note that within the Python AWS environment, the AWS credentials consisting of an Access Key ID and Secret Access Key are found as environment variables.</description>
+    </item>
+    
+  </channel>
+</rss>
