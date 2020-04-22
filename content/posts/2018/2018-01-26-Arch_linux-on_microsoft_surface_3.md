@@ -8,6 +8,14 @@ tags:
 aliases: /blog/2018/Arch_linux-on_microsoft_surface_3
 ---
 
+_Update: April 22, 2020_
+
+This post as it stands is pretty outdated, though I currently don't have the time to fix that. Read this comment for an idea of how things are at the moment:
+
+https://github.com/seanlane/seanlane.github.io/issues/6#issuecomment-617574939
+
+TL;DR: Go checkout this project for the latest kernel: https://github.com/linux-surface/linux-surface
+
 _Update: July 23, 2019_
 
 I came back to this after a hiatus, and finally finished a relevant install of Linux on my Surface 3. I abandoned the effort to use Arch Linux, opting instead to try [ElementaryOS](https://elementary.io/) since the main purpose of this device will be for some children to use during long car rides.
