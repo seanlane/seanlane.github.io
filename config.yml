@@ -33,20 +33,29 @@ params:
     - style.css
   roles:
     current:
+      - title: Software Development Engineer
+        name: Amazon Web Services
+        image: /images/index/aws.svg
+        image_class: index-image-tall
+        url: https://aws.amazon.com
+    past:
+      - title: Director of Engineering
+        name: Achilles Heel Technologies
+        image: /images/index/aht.png
+        url: https://aht.ai
+      - title: M.S. in Computer Science
+        name: Brigham Young University
+        image: /images/index/byu-seal-blue.svg
+        image_class: index-image-tall
+        url: https://cs.byu.edu
       - title: Graduate Intern
         name: Applied Invention
         image: /images/index/ai-logo.svg
         url: https://www.appliedinvention.com
-      - title: Director of Engineering
-        name: Achilles Heel Technologies
-        image: /images/index/aht.png
-        url: http://aht.ai
-      - title: Graduate CS Student
+      - title: Graduate Research Assistant
         name: BYU IDeA Labs
         image: /images/index/idealabs.png
         url: https://idealabs.byu.edu
-      
-    past:
       - title: Graduate Intern
         name: Pacific Northwest National Laboratory
         image: /images/index/pnnl.svg
@@ -55,7 +64,7 @@ params:
         name: Instructure
         image: /images/index/instructure.svg
         url: https://instructure.com
-      - title: B.S. in Computer Science
+      - title: B.S. in Computer Science & Minor in Mathematics
         name: Brigham Young University
         image: /images/index/byu-seal-blue.svg
         image_class: index-image-tall
