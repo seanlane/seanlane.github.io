@@ -118,7 +118,7 @@ params:
     - name: LinkedIn
       icon: fab fa-linkedin fa-lg
       weight: 4
-      url: 'https://www.linkedin.com/in/SeanTLane'
+      url: 'https://www.linkedin.com/in/sean-lane'
     - name: Mastodon
       icon: fab fa-mastodon fa-lg
       weight: 5
