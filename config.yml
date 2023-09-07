@@ -36,7 +36,7 @@ params:
       - title: Senior Software Engineer
         name: Neighbor
         blurb: Hey, I'm Sean - A Software Engineer in Utah.
-        subblurb: I've developed features for billions of Microsoft Office and AWS users, researched vulnerabilites of cyber-physical systems, and currently I'm working on building the best peer-to-peer marketplace for storage with my colleagues Neighbor.
+        subblurb: I've developed features for billions of Microsoft Office and AWS users, researched vulnerabilites of cyber-physical systems, and currently I'm working on building the best peer-to-peer marketplace for storage with my colleagues at Neighbor.
         image: /images/index/neighbor.svg
         url: https://neighbor.com
     past:
