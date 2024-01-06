@@ -9,4 +9,4 @@ After 7 years in scouting, I achieved the rank of Eagle Scout. My project consis
 An album of the project and a small article from the local newspaper about the project may be viewed at the following links:
 
 * [Flickr: Eagle Scout Project](https://www.flickr.com/photos/seanlane/sets/72157672311571116/with/28675820290)
-* [Porterville Recorder: New pole lets flags fly high over Air Attack Base](http://www.recorderonline.com/new-pole-lets-flags-fly-high-over-air-attack-base/article_1ce3953c-ad0d-5cf4-bca2-d4b5e8efb47f.html)
+* [Porterville Recorder: New pole lets flags fly high over Air Attack Base](https://web.archive.org/web/20220812172652/https://www.recorderonline.com/new-pole-lets-flags-fly-high-over-air-attack-base/article_1ce3953c-ad0d-5cf4-bca2-d4b5e8efb47f.html)
