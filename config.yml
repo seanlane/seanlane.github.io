@@ -17,9 +17,9 @@ permalinks:
   presentations: /presentations/:year/:month/:title
 params:
   author: Sean Lane
-  info: BYU CS PhD Student
+  info: Software Engineer in Utah
   description: Sean Lane's personal website
-  keywords: 'blog,developer,personal'
+  keywords: 'blog,developer,personal,software,engineer,utah'
   avatarurl: images/sean.png
   favicon_32: /images/favicon-32x32.png
   favicon_16: /images/favicon-16x16.png
