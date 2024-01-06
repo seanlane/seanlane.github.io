@@ -124,7 +124,7 @@ params:
     - name: LinkedIn
       icon: fab fa-linkedin fa-lg
       weight: 4
-      url: 'https://www.linkedin.com/in/sean-lane'
+      url: 'https://www.linkedin.com/in/seantheolane'
     # - name: Mastodon
     #   icon: fab fa-mastodon fa-lg
     #   weight: 5
@@ -135,7 +135,7 @@ params:
     - name: Twitter
       icon: fab fa-twitter fa-lg
       weight: 6
-      url: 'https://twitter.com/_seanlane'
+      url: 'https://twitter.com/seantheolane'
 menu:
   main:
     - name: Home
