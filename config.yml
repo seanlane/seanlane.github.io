@@ -117,10 +117,10 @@ params:
       icon: fab fa-github fa-lg
       weight: 2
       url: 'https://github.com/seanlane/'
-    - name: Keybase
-      icon: fab fa-keybase fa-lg
-      weight: 3
-      url: 'https://keybase.io/seanlane'
+    # - name: Keybase
+    #   icon: fab fa-keybase fa-lg
+    #   weight: 3
+    #   url: 'https://keybase.io/seanlane'
     - name: LinkedIn
       icon: fab fa-linkedin fa-lg
       weight: 4
