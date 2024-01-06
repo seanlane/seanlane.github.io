@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sean Lane">
+    <meta name="description" content="Sean Lane&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal,software,engineer,utah">
+
+    
+    <title>
+  Hosting comments within issues on Github Pages · Sean Lane
+</title>
+
+    <link rel="canonical" href="https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  
+    
+    
+    <link rel="stylesheet" href="https://sean.lane.sh/css/coder.min.f1211b4ed23b57b3f430d3bf2f297317076a8af695c889860f420b16dc57158d.css" integrity="sha256-8SEbTtI7V7P0MNO/LylzFwdqivaVyImGD0ILFtxXFY0=" crossorigin="anonymous" media="screen" />
+  
+  
+  
+  
+    <link rel="stylesheet" href="https://sean.lane.sh/style.css">
+  
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-16x16.png" sizes="16x16">
+  <meta name="generator" content="Hugo 0.121.1">
+    <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
+  </head>
+  <body class=" ">
+    <nav class="navigation pure-g">
+  <section class="pure-u-1 pure-u-md-1-3">
+    <div class="nav-left">
+      
+        <a class="nav-avatar" href="https://sean.lane.sh">
+          <img src="https://sean.lane.sh/images/sean.png" alt="avatar" />
+        </a>
+      
+      <a class="nav-title" href="https://sean.lane.sh">
+        Sean Lane
+      </a>
+    </div>
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-center">
+    
+      
+        <a href="mailto:hi@sean.lane.sh"><i class="far fa-envelope fa-lg"></i></a>
+      
+        <a href="https://github.com/seanlane/"><i class="fab fa-github fa-lg"></i></a>
+      
+        <a href="https://www.linkedin.com/in/seantheolane"><i class="fab fa-linkedin fa-lg"></i></a>
+      
+        <a href="https://sean.lane.sh/posts/index.xml"><i class="fas fa-rss fa-lg"></i></a>
+      
+        <a href="https://twitter.com/seantheolane"><i class="fab fa-twitter fa-lg"></i></a>
+      
+    
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-right">
+    
+      
+        <a href="https://sean.lane.sh/">Home</a>
+      
+        <a href="https://sean.lane.sh/resume/">Resume</a>
+      
+        <a href="https://sean.lane.sh/posts/">Posts</a>
+      
+        <a href="https://sean.lane.sh/other/">Other</a>
+      
+    
+  </section>
+</nav>
+
+    <main class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Hosting comments within issues on Github Pages</h1>
+        </div>
+        <div class="post-meta pure-g">
+          <div class="posted-on pure-u-1 pure-u-sm-1-3">
+            <i class="fas fa-calendar"></i>
+            <time datetime='2016-01-26T00:00:00Z'>
+              January 26, 2016
+            </time>
+          </div>
+          <div class="reading-time pure-u-1 pure-u-sm-1-3 post-center">
+            <i class="fas fa-clock"></i>
+            Reading time: 7 minutes
+          </div>
+          <div class="pure-u-1 pure-u-sm-1-3 post-right">
+            
+            <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://sean.lane.sh/tags/web/">Web</a></div>
+
+          </div>
+        </div>
+      </header>
+      <div>
+        <p><em>Note:</em> As of February 2018, the repo for this website is public, so I moved the comments to the same repo instead of using a separate project for them.</p>
+<p>When I created a blog to have a place to write and document things, as well as complete a class requirement for <a href="https://cs.byu.edu/course/cs-404">CS 404</a>, there were properties that I wanted it to have. I wanted it to be simple, to be hosted on a reputable platform, to be under my control, and to perform well. By using Github Pages to host a run a Jekyll static site, I was pretty much able to get everything in one fell swoop.</p>
+<p>However, one thing I found lacking was comments or giving anyone a way to respond or comment on a given blog post. I looked around for a few different solutions. One option that many turn to is using <a href="https://disqus.com/">Disqus</a> comments. It is easy to implement, requiring a simple snippet of Javascript to be included on any post where you would like comments to be included, but several drawbacks of using Disqus quickly became apparent. As an additional Javascript component, it requires additional requests that can quickly bog down what was once a quick, simple website. <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> Other issues of privacy and security also came up with Disqus, and any third party service you trust is just another liability for your website. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> Other products I looked at were <a href="https://www.discourse.org/">Discourse</a> and <a href="http://pooleapp.com/">Poole</a>, but I really wanted to avoid making the site any more complicated and having to rely on a third party.</p>
+<p>I found a blog post by <a href="http://ivanzuzak.info/">Ivan Zuzak</a> that detailed how you can utilize Github&rsquo;s Issue Tracking system to host the comments for a Github Pages site. <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> It is a really nifty hack that adds comments hosted via the same platform that the site is hosted one, with only a couple steps added to my workflow when posting.</p>
+<p>I followed Ivan&rsquo;s steps, with a small change to his instructions for my own situation. The reason for the change is that I host my site in a private Github repository, and I didn&rsquo;t want to make it public. The fix was to simply use a second, public repo for the comments while I continue to keep the website in the private repo. Aside from that, everything worked perfectly. The following steps (which are further explained in Ivan&rsquo;s blog post) set the system in place:</p>
+<h2 id="adding-the-foundation-to-your-site">Adding the foundation to your site</h2>
+<p>1. (Optional) Create a public repository where you can create issues to host the comments. If the repo where your site is hosted is private, then the issues will be private as well. Even if the website has authorization to pull the comments for public viewing, no one would be able to submit new comments via Github without being explicitly granted access to at least view the repo. My work around is creating a second public repo to store my comments. If your Github Pages site is already in a public repo, then you can simply use the repo&rsquo;s issue for comments.</p>
+<p>2. <a href="https://github.com/settings/applications/new">Register a New OAuth Application with GitHub. </a> Give it a name that you will remember it by (doesn&rsquo;t really matter for our purposes). The Homepage and Authorization callback URLs should both be the URL of your blog. For example, mine are set to <code>http://seanlane.net</code>, which can be in seen in the following image:</p>
+<figure><img src="https://sean.lane.sh/images/2016/01/comments_on_github/oauth_app.png"/><figcaption>
+            <h4>Adding a new OAUTH Application in Github</h4>
+        </figcaption>
+</figure>
+
+<p>This authorizes the site to by-pass the <a href="https://en.wikipedia.org/wiki/Same-origin_policy">Same-Origin policy</a>, which is further explained in Ivan&rsquo;s piece <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<p>3. I added the following code to the Jekyll template for each post:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{% if page.commentIssueId %}
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;comments&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h2</span>&gt;Comments&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        Want to leave a comment? Visit &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/seanlane/seanlane-comments/issues/{{page.commentIssueId}}&#34;</span>&gt; 
+</span></span><span style="display:flex;"><span>        this post&#39;s issue page on GitHub&lt;/<span style="color:#f92672">a</span>&gt; (you&#39;ll need a GitHub account. What? Like you already don&#39;t have one? :).
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://datejs.googlecode.com/svn/trunk/build/date-en-US.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">loadComments</span>(<span style="color:#a6e22e">data</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cuser</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">login</span>;
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cuserlink</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.github.com/&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">login</span>;
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">clink</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://github.com/seanlane/seanlane-comments/issues/{{page.commentIssueId}}#issuecomment-&#34;</span> <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>                  <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">substring</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">url</span>.<span style="color:#a6e22e">lastIndexOf</span>(<span style="color:#e6db74">&#34;/&#34;</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cbody</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">body_html</span>;
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cavatarlink</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">avatar_url</span>;
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">cdate</span> <span style="color:#f92672">=</span> Date.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">data</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">created_at</span>).<span style="color:#a6e22e">toString</span>(<span style="color:#e6db74">&#34;yyyy-MM-dd HH:mm:ss&#34;</span>);
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#comments&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&lt;div class=&#39;comment&#39;&gt;&lt;div class=&#39;commentheader&#39;&gt;&lt;div class=&#39;commentgravatar&#39;&gt;&#34;</span> 
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&lt;img src=&#34;&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cavatarlink</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;&#34; alt=&#34;&#34; width=&#34;20&#34; height=&#34;20&#34;&gt;&#39;</span> 
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/div&gt;&lt;a class=&#39;commentuser&#39; href=\&#34;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cuserlink</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\&#34;&gt;&#34;</span> 
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">+</span> <span style="color:#a6e22e">cuser</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/a&gt;&lt;a class=&#39;commentdate&#39; href=\&#34;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">clink</span> 
+</span></span><span style="display:flex;"><span>                  <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;\&#34;&gt;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cdate</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#39;commentbody&#39;&gt;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">cbody</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/div&gt;&lt;/div&gt;&#34;</span>);
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>(<span style="color:#e6db74">&#34;https://api.github.com/repos/seanlane/seanlane-comments/issues/{{page.commentIssueId}}/comments&#34;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">headers</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">Accept</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;application/vnd.github.full+json&#34;</span>},
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">success</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">msg</span>){
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">loadComments</span>(<span style="color:#a6e22e">msg</span>);
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      });
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>{% endif %}
+</span></span></code></pre></div><p>This checks to see if the post has an Issue ID (which will be set in a following step) from which to gather comments, and then populates the bottom of the page with them.</p>
+<p>4. To make the comments a little easier on the eyes, I added some CSS to my templates main CSS file as well:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/********************************
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*  COMMENTS
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">********************************/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">transparent</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-color</span>: <span style="color:#ae81ff">#CACACA</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-style</span>: <span style="color:#66d9ef">solid</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">border-width</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentheader</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-bottom-color</span>: <span style="color:#ae81ff">#CACACA</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-bottom-style</span>: <span style="color:#66d9ef">solid</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-bottom-width</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">-webkit-</span>linear-gradient(<span style="color:#ae81ff">#F8F8F8</span>,<span style="color:#ae81ff">#E1E1E1</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">-moz-</span>linear-gradient(<span style="color:#ae81ff">#F8F8F8</span>,<span style="color:#ae81ff">#E1E1E1</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">left</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: helvetica, arial, freesans, clean, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-variant</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">33</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">33</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-x</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-y</span>: <span style="color:#66d9ef">hidden</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">ellipsis</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-shadow</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.699219</span>) <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentheader</span> .<span style="color:#a6e22e">commentgravatar</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-attachment</span>: <span style="color:#66d9ef">scroll</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-clip</span>: <span style="color:#66d9ef">border-box</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">white</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-origin</span>: <span style="color:#66d9ef">padding-box</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-color</span>: <span style="color:#ae81ff">#C8C8C8</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-style</span>: <span style="color:#66d9ef">solid</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-width</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: helvetica, arial, freesans, clean, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-variant</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">-2</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-x</span>: <span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-y</span>: <span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">clip</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-shadow</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.699219</span>) <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">vertical-align</span>: <span style="color:#66d9ef">middle</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentheader</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">link</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentheader</span> <span style="color:#f92672">a</span>:<span style="color:#a6e22e">hover</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border-bottom</span>:<span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentheader</span> .<span style="color:#a6e22e">commentuser</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">transparent</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">black</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: helvetica, arial, freesans, clean, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-variant</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">bold</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">16</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-x</span>: <span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-y</span>: <span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">clip</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-shadow</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.699219</span>) <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentheader</span> .<span style="color:#a6e22e">commentdate</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">transparent</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#777</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">float</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-family</span>: helvetica, arial, freesans, clean, <span style="color:#66d9ef">sans-serif</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">11</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-variant</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-weight</span>: <span style="color:#66d9ef">normal</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">33</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-x</span>: <span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-y</span>: <span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-overflow</span>: <span style="color:#66d9ef">clip</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">text-shadow</span>: rgba(<span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">255</span>, <span style="color:#ae81ff">0.699219</span>) <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">white-space</span>: <span style="color:#66d9ef">nowrap</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentbody</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-attachment</span>: <span style="color:#66d9ef">scroll</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-clip</span>: <span style="color:#66d9ef">border-box</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">transparent</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-image</span>: <span style="color:#66d9ef">none</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-origin</span>: <span style="color:#66d9ef">padding-box</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#333</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">40</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-x</span>: <span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">overflow-y</span>: <span style="color:#66d9ef">visible</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">static</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">96</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">word-wrap</span>: <span style="color:#66d9ef">break-word</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentbody</span> <span style="color:#f92672">p</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-bottom</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentbody</span> <span style="color:#f92672">pre</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ddd</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#eef</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">.4</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentbody</span> <span style="color:#f92672">pre</span> <span style="color:#f92672">code</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ddd</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">comment</span> .<span style="color:#a6e22e">commentbody</span> <span style="color:#f92672">code</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ddd</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#eef</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">85</span><span style="color:#66d9ef">%</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">.2</span><span style="color:#66d9ef">em</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>With those four steps, I can introduce comments on any given blog post (or any page with the support code in place). Again, note that most of the code came from Ivan Zuzak&rsquo;s post, with some small modifications on my part.</p>
+<h2 id="adding-comments-to-a-post">Adding comments to a post</h2>
+<p>Now all that is left to do is perform the following steps for any post that you want to have comments. For each post, do the following:</p>
+<p>1. Create a new issue in your designated repo to act as a host for your comments for that particular post. Every issue follows a base URL: <code>https://github.com/{GITHUB USERNAME}/{REPO NAME}/issues/{ISSUE ID #}</code>. Each issue is given a unique ID that is visible in the URL of the issue after it has been created. For example, <a href="https://github.com/seanlane/seanlane-comments/issues/1">https://github.com/seanlane/seanlane-comments/issues/1</a>:</p>
+<figure><img src="https://sean.lane.sh/images/2016/01/comments_on_github/issue.png"/><figcaption>
+            <h4>Screenshot of the Github issues page for this post&#39;s comments</h4>
+        </figcaption>
+</figure>
+
+<p>2. Take the ID for that issue that will serve as the comments page for a particular post, and add the ID as a property in the page YAML front matter:</p>
+<pre><code>    ---
+    layout: post
+    title: Comments on Github
+    commentIssueId: 1
+    ---
+</code></pre>
+<p>When properly setup, we will then see an appropriate comments section after our blog post:</p>
+<figure><img src="https://sean.lane.sh/images/2016/01/comments_on_github/comments_example.png"/><figcaption>
+            <h4>Screenshot of the Comments in action</h4>
+        </figcaption>
+</figure>
+
+<p>It might be a slight hack, but now I have an easy way to pull comments into my static website without involving a third-party platform or forcing users to download yet another Javascript tracking widget. Hopefully, my example is of use to someone, and I appreciate Ivan&rsquo;s post for leading the way.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="http://chrislema.com/killed-disqus-commenting/http://chrislema.com/killed-disqus-commenting/">http://chrislema.com/killed-disqus-commenting/http://chrislema.com/killed-disqus-commenting/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://en.wikipedia.org/wiki/Disqus#Criticism_and_privacy_concerns">https://en.wikipedia.org/wiki/Disqus#Criticism_and_privacy_concerns</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="http://ivanzuzak.info/2011/02/18/">http://ivanzuzak.info/2011/02/18/</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html#par11">http://ivanzuzak.info/2011/02/18/github-hosted-comments-for-github-hosted-blogs.html#par11</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+      </div>
+      <div id="comments" class="comments">
+    <h2>Comments</h2>
+    <div id="comments-preamble">
+        To leave a comment, <a href="https://github.com/seanlane/seanlane.github.io/issues/1">visit this post's issue page on GitHub.</a> 
+        A GitHub account is required, since <a href="https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/">I host this site's comments on GitHub.</a>
+    <div>
+</div>
+<script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript">
+  function loadComments(data) {
+    for (var i=0; i < data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = "https://www.github.com/" + data[i].user.login;
+      var clink = "https://github.com/seanlane\/seanlane.github.io/issues/1#issuecomment-" + 
+          data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;
+      var cdate = Date.parse(data[i].created_at).setTimezone('UTC').toString("yyyy-MM-dd HH:mm:ss");
+
+      $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" 
+        + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' 
+        + "</div><a class='commentuser' href=\"" + cuserlink + "\">" 
+        + cuser + "</a><a class='commentdate' href=\"" + clink 
+        + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+    }
+  }
+
+  $.ajax("https://api.github.com/repos/seanlane\/seanlane.github.io/issues/1/comments", {
+    headers: {Accept: "application/vnd.github.full+json"},
+    success: function(msg){
+      loadComments(msg);
+    }
+  });
+</script>
+      <footer>
+        
+      </footer>
+    </article>
+    
+  </section>
+
+    </main>
+    <footer class="footer">
+  
+   © 2024
+  
+     · 
+    Powered by <a href="https://gohugo.io/">Hugo</a> &amp; Extended from <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+  
+  
+</footer>
+
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-31520487-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  </body>
+</html>

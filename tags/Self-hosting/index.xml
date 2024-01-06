@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Self hosting on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/Self-hosting/</link>
+    <description>Recent content in Self hosting on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/tags/Self-hosting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Home backup strategy</title>
+      <link>https://sean.lane.sh/posts/2018/07/Home-backup-strategy/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/07/Home-backup-strategy/</guid>
+      <description>TL;DR: CrashPlan died in May 2018, so I switched my family over to using Duplicati, restic, and rclone to sync backups both locally and in the cloud. As a bonus, we&amp;rsquo;re doing for free for the next year with Google Cloud Storage due to their 12 month, $300 free trial.&#xA;Motivation For the past two years or so from the date of this post, I&amp;rsquo;ve had my family using a piece of software known as CrashPlan for backing up all of the computers for my family, my siblings and their families, and my parents.</description>
+    </item>
+  </channel>
+</rss>

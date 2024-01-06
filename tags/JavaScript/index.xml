@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/JavaScript/</link>
+    <description>Recent content in JavaScript on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/tags/JavaScript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Filtering domain names on Domcomp.com with regex</title>
+      <link>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</guid>
+      <description>Lately, I&amp;rsquo;ve been looking around for another domain name that&amp;rsquo;s a little shorter and more flexible than seanlane.net. My purposes for that can be explained another time, but I have been trying to search domain names that have top-level domains (the .com part of google.com, for example) that are shorter in length, alongside some other attributes. There are a number of good tools to use for searching for available domain names, but I have not found any that allow for searching by the length of top-level domain.</description>
+    </item>
+  </channel>
+</rss>

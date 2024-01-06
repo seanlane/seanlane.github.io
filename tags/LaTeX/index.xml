@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/LaTeX/</link>
+    <description>Recent content in LaTeX on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/tags/LaTeX/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Snippets for Markdown to LaTeX with Pandoc</title>
+      <link>https://sean.lane.sh/posts/2018/08/Snippets-for-Markdown-to-LaTeX-with-Pandoc/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/08/Snippets-for-Markdown-to-LaTeX-with-Pandoc/</guid>
+      <description>This is another living post that serves more for my personal benefit than anything else. By living, I mean that I will continue to update it over time as I find things I want to keep easily accessible. This post is a place to paste snippets and boiler plate of Markdown/Pandoc/LaTeX material that I find useful but often forget. There&amp;rsquo;s probably nothing very genius or awe-inspiring here, but hopefully I won&amp;rsquo;t have to grep through by bash history as often, trying to remember what I did that one time to do that one thing.</description>
+    </item>
+    <item>
+      <title>Example for LaTeX Funeral or Memorial Program</title>
+      <link>https://sean.lane.sh/posts/2018/06/Example-for-LaTeX-Funeral-or-Memorial-Program/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/06/Example-for-LaTeX-Funeral-or-Memorial-Program/</guid>
+      <description>Another quick post, but something that I hope might be useful to others. Within the past couple weeks, my grandmother of 83 years passed away and my family held a memorial service in her honor. I was asked if I could help out in creating a program booklet or pamphlet that could be given out to the attendees, something that would describe the service itself as well as share a piece of my grandmother&amp;rsquo;s life with them as we gathered to remember her.</description>
+    </item>
+  </channel>
+</rss>

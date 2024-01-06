@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/Web/</link>
+    <description>Recent content in Web on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/tags/Web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hosting comments within issues on Github Pages</title>
+      <link>https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/</link>
+      <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/</guid>
+      <description>Note: As of February 2018, the repo for this website is public, so I moved the comments to the same repo instead of using a separate project for them.&#xA;When I created a blog to have a place to write and document things, as well as complete a class requirement for CS 404, there were properties that I wanted it to have. I wanted it to be simple, to be hosted on a reputable platform, to be under my control, and to perform well.</description>
+    </item>
+  </channel>
+</rss>

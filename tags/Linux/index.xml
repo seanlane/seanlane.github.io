@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/Linux/</link>
+    <description>Recent content in Linux on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/tags/Linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installing Linux on a Microsoft Surface 3</title>
+      <link>https://sean.lane.sh/posts/2018/01/Installing-Linux-on-a-Microsoft-Surface-3/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/01/Installing-Linux-on-a-Microsoft-Surface-3/</guid>
+      <description>Update: April 22, 2020&#xA;This post as it stands is pretty outdated, though I currently don&amp;rsquo;t have the time to fix that. Read this comment for an idea of how things are at the moment:&#xA;https://github.com/seanlane/seanlane.github.io/issues/6#issuecomment-617574939&#xA;TL;DR: Go checkout this project for the latest kernel: https://github.com/linux-surface/linux-surface&#xA;Update: July 23, 2019&#xA;I came back to this after a hiatus, and finally finished a relevant install of Linux on my Surface 3. I abandoned the effort to use Arch Linux, opting instead to try ElementaryOS since the main purpose of this device will be for some children to use during long car rides.</description>
+    </item>
+  </channel>
+</rss>

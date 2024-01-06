@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sean Lane">
+    <meta name="description" content="Sean Lane&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal,software,engineer,utah">
+
+    
+    <title>
+  Filtering domain names on Domcomp.com with regex · Sean Lane
+</title>
+
+    <link rel="canonical" href="https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  
+    
+    
+    <link rel="stylesheet" href="https://sean.lane.sh/css/coder.min.f1211b4ed23b57b3f430d3bf2f297317076a8af695c889860f420b16dc57158d.css" integrity="sha256-8SEbTtI7V7P0MNO/LylzFwdqivaVyImGD0ILFtxXFY0=" crossorigin="anonymous" media="screen" />
+  
+  
+  
+  
+    <link rel="stylesheet" href="https://sean.lane.sh/style.css">
+  
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-16x16.png" sizes="16x16">
+  <meta name="generator" content="Hugo 0.121.1">
+    <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
+  </head>
+  <body class=" ">
+    <nav class="navigation pure-g">
+  <section class="pure-u-1 pure-u-md-1-3">
+    <div class="nav-left">
+      
+        <a class="nav-avatar" href="https://sean.lane.sh">
+          <img src="https://sean.lane.sh/images/sean.png" alt="avatar" />
+        </a>
+      
+      <a class="nav-title" href="https://sean.lane.sh">
+        Sean Lane
+      </a>
+    </div>
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-center">
+    
+      
+        <a href="mailto:hi@sean.lane.sh"><i class="far fa-envelope fa-lg"></i></a>
+      
+        <a href="https://github.com/seanlane/"><i class="fab fa-github fa-lg"></i></a>
+      
+        <a href="https://www.linkedin.com/in/seantheolane"><i class="fab fa-linkedin fa-lg"></i></a>
+      
+        <a href="https://sean.lane.sh/posts/index.xml"><i class="fas fa-rss fa-lg"></i></a>
+      
+        <a href="https://twitter.com/seantheolane"><i class="fab fa-twitter fa-lg"></i></a>
+      
+    
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-right">
+    
+      
+        <a href="https://sean.lane.sh/">Home</a>
+      
+        <a href="https://sean.lane.sh/resume/">Resume</a>
+      
+        <a href="https://sean.lane.sh/posts/">Posts</a>
+      
+        <a href="https://sean.lane.sh/other/">Other</a>
+      
+    
+  </section>
+</nav>
+
+    <main class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Filtering domain names on Domcomp.com with regex</h1>
+        </div>
+        <div class="post-meta pure-g">
+          <div class="posted-on pure-u-1 pure-u-sm-1-3">
+            <i class="fas fa-calendar"></i>
+            <time datetime='2017-02-20T00:00:00Z'>
+              February 20, 2017
+            </time>
+          </div>
+          <div class="reading-time pure-u-1 pure-u-sm-1-3 post-center">
+            <i class="fas fa-clock"></i>
+            Reading time: 3 minutes
+          </div>
+          <div class="pure-u-1 pure-u-sm-1-3 post-right">
+            
+            <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://sean.lane.sh/tags/cli/">CLI</a>
+      <span class="separator">•</span>
+    <a href="https://sean.lane.sh/tags/javascript/">JavaScript</a>
+      <span class="separator">•</span>
+    <a href="https://sean.lane.sh/tags/scripts/">Scripts</a></div>
+
+          </div>
+        </div>
+      </header>
+      <div>
+        <p>Lately, I&rsquo;ve been looking around for another domain name that&rsquo;s a little shorter and more flexible than seanlane.net. My purposes for that can be explained another time, but I have been trying to search domain names that have top-level domains (the .com part of google.com, for example) that are shorter in length, alongside some other attributes. There are a number of good tools to use for searching for available domain names, but I have not found any that allow for searching by the length of top-level domain.</p>
+<p>One of the tools I am a huge fan of is <a href="https://domcomp.com">DomComp</a>, but I feel like it could be a bit refined. It shows whether a domain is registered or not, but I would rather that the registered ones were hidden. With that, and the other goals I had, I wrote a JavaScript function that filters out the results from DomComp&rsquo;s search functionality:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// Filter domcomp.com results to show what I&#39;m interested in
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">clr</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Google Global TLDs as of Jan 2017
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">g_tlds</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;ad&#39;</span>, <span style="color:#e6db74">&#39;as&#39;</span>, <span style="color:#e6db74">&#39;bz&#39;</span>, <span style="color:#e6db74">&#39;cc&#39;</span>, <span style="color:#e6db74">&#39;cd&#39;</span>, <span style="color:#e6db74">&#39;co&#39;</span>, <span style="color:#e6db74">&#39;dj&#39;</span>, <span style="color:#e6db74">&#39;fm&#39;</span>, <span style="color:#e6db74">&#39;io&#39;</span>, 
+</span></span><span style="display:flex;"><span>                  <span style="color:#e6db74">&#39;la&#39;</span>, <span style="color:#e6db74">&#39;me&#39;</span>, <span style="color:#e6db74">&#39;ms&#39;</span>, <span style="color:#e6db74">&#39;nu&#39;</span>, <span style="color:#e6db74">&#39;sc&#39;</span>, <span style="color:#e6db74">&#39;sr&#39;</span>, <span style="color:#e6db74">&#39;su&#39;</span>, <span style="color:#e6db74">&#39;tv&#39;</span>, <span style="color:#e6db74">&#39;tk&#39;</span>, <span style="color:#e6db74">&#39;ws&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">rows</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#39;price_table&#39;</span>)[<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">rows</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">re</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">/^[a-z0-9]+$/i</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">rows</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">rows</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;registered&#39;</span>)    <span style="color:#f92672">||</span>      <span style="color:#75715e">// Don&#39;t show registered TLDs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">rows</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">attributes</span>[<span style="color:#e6db74">&#39;tld&#39;</span>].<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">2</span>  <span style="color:#f92672">||</span>      <span style="color:#75715e">// Don&#39;t show TLDs logner than 2 chars
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#75715e">// $.inArray(rows[i].attributes[&#39;tld&#39;].value, g_tlds) == -1 // Only show Google Global TLDs
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#a6e22e">re</span>.<span style="color:#a6e22e">exec</span>(<span style="color:#a6e22e">rows</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">attributes</span>[<span style="color:#e6db74">&#39;tld&#39;</span>].<span style="color:#a6e22e">value</span>) <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>)   <span style="color:#75715e">// Don&#39;t TLDs with non-English chars
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">rows</span>[<span style="color:#a6e22e">i</span>].<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;None&#39;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The process for using the function is a little raw, but it gets the job done. The steps are as follows:</p>
+<ol>
+<li>Go to <a href="https://domcomp.com">domcomp.com</a></li>
+<li>Under &lsquo;New&rsquo; domains, search for a domain name. Like &lsquo;seanlane&rsquo; for example</li>
+<li>Scroll down once or twice to make sure enough results load</li>
+<li>Open a developer console in your browser
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/console/#open_as_panel">How to open a console in Google Chrome</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Console#Opening_the_Browser_Console">How to open a console in Mozilla Firefox</a></li>
+</ul>
+</li>
+<li>Copy and paste in the script above
+<ul>
+<li><strong>NOTE:</strong> This is dangerous to do with code you do not completely understand, as this allows for malicious code to potentially be ran on your browser. I would hope that the script above is plain enough, but you should be very wary of doing this without making sure you understand what is being ran</li>
+</ul>
+</li>
+<li>In the console, call the function by entering <code>clr()</code> and pressing enter.</li>
+<li>Repeat step 6 as necessary to filter out the results</li>
+</ol>
+<p>In the script above, I have filtered out registered domain names, any domain names with TLDs longer than 2 characters, and domains that contain non-English characters. Commented out, but still there is a clause to only retain domains with TLDs that are within the list of what Google considers <a href="https://support.google.com/webmasters/answer/62399?hl=en">Generic Country Code Top Level Domains (ccTLDs)</a>.</p>
+<p>There is probably a much better way to go about this, the least of which would be running it as the results load in automatically, but it works well enough for the time being.</p>
+
+      </div>
+      <div id="comments" class="comments">
+    <h2>Comments</h2>
+    <div id="comments-preamble">
+        To leave a comment, <a href="https://github.com/seanlane/seanlane.github.io/issues/3">visit this post's issue page on GitHub.</a> 
+        A GitHub account is required, since <a href="https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/">I host this site's comments on GitHub.</a>
+    <div>
+</div>
+<script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript">
+  function loadComments(data) {
+    for (var i=0; i < data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = "https://www.github.com/" + data[i].user.login;
+      var clink = "https://github.com/seanlane\/seanlane.github.io/issues/3#issuecomment-" + 
+          data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;
+      var cdate = Date.parse(data[i].created_at).setTimezone('UTC').toString("yyyy-MM-dd HH:mm:ss");
+
+      $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" 
+        + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' 
+        + "</div><a class='commentuser' href=\"" + cuserlink + "\">" 
+        + cuser + "</a><a class='commentdate' href=\"" + clink 
+        + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+    }
+  }
+
+  $.ajax("https://api.github.com/repos/seanlane\/seanlane.github.io/issues/3/comments", {
+    headers: {Accept: "application/vnd.github.full+json"},
+    success: function(msg){
+      loadComments(msg);
+    }
+  });
+</script>
+      <footer>
+        
+      </footer>
+    </article>
+    
+  </section>
+
+    </main>
+    <footer class="footer">
+  
+   © 2024
+  
+     · 
+    Powered by <a href="https://gohugo.io/">Hugo</a> &amp; Extended from <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+  
+  
+</footer>
+
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-31520487-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  </body>
+</html>

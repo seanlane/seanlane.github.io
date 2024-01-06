@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presentations on Sean Lane</title>
+    <link>https://sean.lane.sh/presentations/</link>
+    <description>Recent content in Presentations on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Nov 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/presentations/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BYU CS 611: Inclusion Relationships</title>
+      <link>https://sean.lane.sh/presentations/2016/11/BYU-CS-611-Inclusion-Relationships/</link>
+      <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/presentations/2016/11/BYU-CS-611-Inclusion-Relationships/</guid>
+      <description>## Inclusion Relationships ### Sean Lane ## Quiz 1. (2 pts.) Give an informal ~~proof~~ _explanation of the reasoning behind_ Corollary 5.7: $$ NP \subseteq PSPACE $$ 2. (1 pt.) What is the name of the function used by Savitch&#39;s Theorem to verify if $w$ is accepted? * A. CHECK * B. TEST * C. VERIFY * D. TEMP * E. ACCEPT * F. temp\_function\_1 3. (2 pts.) Informally explain why, for every function $f$, $$ DTIME(f) \subseteq DSPACE(f) $$ ## Theorem 5.</description>
+    </item>
+    <item>
+      <title>BYU CS 611: Claude Shannon</title>
+      <link>https://sean.lane.sh/presentations/2016/10/BYU-CS-611-Claude-Shannon/</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/presentations/2016/10/BYU-CS-611-Claude-Shannon/</guid>
+      <description>Claude Shannon Early Years Born in Petosky, Michigan Grew up in Gaylord, Michigan Mother was a high school principal Father was a Probate Judge Early Years Early aptitude for mathematics and science Built various devices as a youth Model planes Radio-controlled boat Telegraph system to a friend&#39;s house with the wire fencing Distant cousin to Thomas Edison University of Michigan Begins studying at the University of Michigan in 1932 15 - 16 years old Introduced to the work of George Boole Boolean logic Graduates in 1936, majoring in: Electrical Engineering Mathematics Boolean algebra applied in circuits After graduation, begins studying electrical engineering at MIT in 1936 Worked under Vannevar Bush with analog differential analyzers Took a course from Norbert Weiner Spent the summer of 1937 at Bell Labs, influenced later work Boolean algebra applied in circuits Works on early analog computers and designs switching circuits based on Boolean logic At first applied to simplify telephone switching relays Then proven that all Boolean algebra problems can be solved via circuits Foundation for all electronic digital computers Boolean algebra applied in circuits Published Master’s thesis in 1937 based on this work A Symbolic Analysis of Relay and Switching Circuits Has been called “one of the most important master’s theses ever written” 22 years old Doctorate and Institute for Advanced Study Completed his doctoral degree from MIT in 1940 Dissertation: An Algebra for Theoretical Genetics Application of mathematics to genetics Completed in less than a year Also spent time in a flight training program Doctorate and Institute for Advanced Study National Research Fellow at the Institute for Advanced Study for the year following This place should sound familiar by now.</description>
+    </item>
+  </channel>
+</rss>

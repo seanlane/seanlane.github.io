@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sean Lane">
+    <meta name="description" content="Sean Lane&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal,software,engineer,utah">
+
+    
+    <title>
+  Tech Tips from Another Lifetime · Sean Lane
+</title>
+
+    <link rel="canonical" href="https://sean.lane.sh/posts/2018/07/Tech-Tips-from-Another-Lifetime/">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Source+Code+Pro:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  
+    
+    
+    <link rel="stylesheet" href="https://sean.lane.sh/css/coder.min.f1211b4ed23b57b3f430d3bf2f297317076a8af695c889860f420b16dc57158d.css" integrity="sha256-8SEbTtI7V7P0MNO/LylzFwdqivaVyImGD0ILFtxXFY0=" crossorigin="anonymous" media="screen" />
+  
+  
+  
+  
+    <link rel="stylesheet" href="https://sean.lane.sh/style.css">
+  
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://sean.lane.sh/images/favicon-16x16.png" sizes="16x16">
+  <meta name="generator" content="Hugo 0.121.1">
+    <script src="//instant.page/1.2.1" type="module" integrity="sha384-/IkE5iZAM/RxPto8B0nvKlMzIyCWtYocF01PbGGp1qElJuxv9J4whdWBRtzZltWn"></script>
+  </head>
+  <body class=" ">
+    <nav class="navigation pure-g">
+  <section class="pure-u-1 pure-u-md-1-3">
+    <div class="nav-left">
+      
+        <a class="nav-avatar" href="https://sean.lane.sh">
+          <img src="https://sean.lane.sh/images/sean.png" alt="avatar" />
+        </a>
+      
+      <a class="nav-title" href="https://sean.lane.sh">
+        Sean Lane
+      </a>
+    </div>
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-center">
+    
+      
+        <a href="mailto:hi@sean.lane.sh"><i class="far fa-envelope fa-lg"></i></a>
+      
+        <a href="https://github.com/seanlane/"><i class="fab fa-github fa-lg"></i></a>
+      
+        <a href="https://www.linkedin.com/in/seantheolane"><i class="fab fa-linkedin fa-lg"></i></a>
+      
+        <a href="https://sean.lane.sh/posts/index.xml"><i class="fas fa-rss fa-lg"></i></a>
+      
+        <a href="https://twitter.com/seantheolane"><i class="fab fa-twitter fa-lg"></i></a>
+      
+    
+  </section>
+  <section class="pure-u-1 pure-u-md-1-3 nav-right">
+    
+      
+        <a href="https://sean.lane.sh/">Home</a>
+      
+        <a href="https://sean.lane.sh/resume/">Resume</a>
+      
+        <a href="https://sean.lane.sh/posts/">Posts</a>
+      
+        <a href="https://sean.lane.sh/other/">Other</a>
+      
+    
+  </section>
+</nav>
+
+    <main class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Tech Tips from Another Lifetime</h1>
+        </div>
+        <div class="post-meta pure-g">
+          <div class="posted-on pure-u-1 pure-u-sm-1-3">
+            <i class="fas fa-calendar"></i>
+            <time datetime='2018-07-07T00:00:00Z'>
+              July 7, 2018
+            </time>
+          </div>
+          <div class="reading-time pure-u-1 pure-u-sm-1-3 post-center">
+            <i class="fas fa-clock"></i>
+            Reading time: 2 minutes
+          </div>
+          <div class="pure-u-1 pure-u-sm-1-3 post-right">
+            
+            <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://sean.lane.sh/tags/cli/">CLI</a></div>
+
+          </div>
+        </div>
+      </header>
+      <div>
+        <p>The following is mostly for my own personal reference. About 5 years ago, I worked as a technical support agent for a fairly large webhosting company that used to be located in Utah, and at the time I kept a small Wordpress site with some tips or code snippets that often came in handy. I was cleaning out soem old files, and came across the SQL dump of that site when I left that job. I&rsquo;m turning them all into a post here for future reference.</p>
+<h2 id="mtr---combo-of-ping-and-traceroute">MTR - Combo of <code>ping</code> and <code>traceroute</code></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ mtr --report google.com
+</span></span><span style="display:flex;"><span>Start: 2018-07-07T17:31:19-0600
+</span></span><span style="display:flex;"><span>HOST: sean                        Loss%   Snt   Last   Avg  Best  Wrst StDev
+</span></span><span style="display:flex;"><span>  1.|-- _gateway                   0.0%    10    0.7   0.8   0.7   0.9   0.1
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span> 14.|-- 108.170.234.125            0.0%    10   30.5  30.5  30.4  30.6   0.1
+</span></span><span style="display:flex;"><span> 15.|-- 108.170.247.129            0.0%    10   32.0  32.2  31.9  32.7   0.3
+</span></span><span style="display:flex;"><span> 16.|-- 209.85.242.103             0.0%    10   31.3  31.2  31.2  31.3   0.1
+</span></span><span style="display:flex;"><span> 17.|-- lax02s23-in-f206.1e100.ne  0.0%    10   29.9  29.9  29.8  30.1   0.1
+</span></span></code></pre></div><h2 id="curl-debug">Curl Debug</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ curl --trace-ascii debugdump.txt
+</span></span></code></pre></div><h2 id="apache-redirect-http-to-https">Apache: Redirect HTTP to HTTPS</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span>RewriteEngine <span style="color:#66d9ef">On</span>\r\nRewriteCond %{HTTPS} !on
+</span></span><span style="display:flex;"><span>RewriteRule (.*) &lt;a href=<span style="color:#e6db74">&#34;https://%%7BHTTP_HOST%7D%%7BREQUEST_URI%7D&#34;</span> target=<span style="color:#e6db74">&#34;_BLANK&#34;</span>&gt;https://%{HTTP_HOST}%{REQUEST_URI}&lt;/a&gt;
+</span></span></code></pre></div><h2 id="use-exigrep-to-search-exim-logs">Use <code>exigrep</code> to search EXIM logs</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span><span style="color:#f92672">$</span> sudo exigrep <span style="color:#e6db74">&#34;email@address.com&#34;</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span>log<span style="color:#f92672">/</span>exim_mainlog<span style="color:#f92672">.</span>{<span style="color:#ae81ff">14.</span><span style="color:#f92672">.</span><span style="color:#ae81ff">17</span>}<span style="color:#f92672">.</span>gz
+</span></span></code></pre></div><h2 id="change-filefolder-permissions-recursively-to-644755">Change File/Folder Permissions recursively to 644/755</h2>
+<p>Source: <a href="http://rainsoftletters.wordpress.com/2008/07/22/recursively-chmodi-only-directories-or-files/">http://rainsoftletters.wordpress.com/2008/07/22/recursively-chmodi-only-directories-or-files/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ find . -type d -exec chmod 755 {}
+</span></span><span style="display:flex;"><span>$ find . -type f -exec chmod 644 {}
+</span></span></code></pre></div><h2 id="recursive-terminal-file-count">Recursive Terminal File Count</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ ls -R | wc -l
+</span></span></code></pre></div><h2 id="debuggin-wp-hacks">Debuggin WP Hacks</h2>
+<ul>
+<li>Use <code>mtime</code> to see if anything was modified recently</li>
+<li>Use something like Sucuri, wepawet, unmasked parasites, etc for surface level hacks that are part of the discoverable file structure</li>
+</ul>
+<h2 id="flush-the-dns-cache-in-windows-or-mac">Flush the DNS Cache in Windows or Mac</h2>
+<ul>
+<li>Mac: <code>$ dscacheutil -flushcache</code></li>
+<li>Windows: <code>$ ipconfig /flushdns</code></li>
+</ul>
+<h2 id="count-ip-addresses-within-an-access-log">Count IP Addresses within an Access Log</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ file/path/to/log.txt | cut -f1 -d &#39;&#39; &#39;&#39; | sort | uniq -c | sort -g -r | head
+</span></span></code></pre></div><h2 id="find-files-older-than-day">Find files older than DAY</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ find ./cur/* -type f -ctime +[DAY]
+</span></span></code></pre></div><p>Use <code>-ctime</code> for created date and <code>-mtime</code> for last modified date. Probably be careful with this one.</p>
+<h2 id="show-disk-usage-sorted-by-size">Show Disk Usage, Sorted by Size</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ du -hs * | sort -hr
+</span></span></code></pre></div>
+      </div>
+      <div id="comments" class="comments">
+    <h2>Comments</h2>
+    <div id="comments-preamble">
+        To leave a comment, <a href="https://github.com/seanlane/seanlane.github.io/issues/12">visit this post's issue page on GitHub.</a> 
+        A GitHub account is required, since <a href="https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/">I host this site's comments on GitHub.</a>
+    <div>
+</div>
+<script type="text/javascript" src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js"></script>
+<script type="text/javascript">
+  function loadComments(data) {
+    for (var i=0; i < data.length; i++) {
+      var cuser = data[i].user.login;
+      var cuserlink = "https://www.github.com/" + data[i].user.login;
+      var clink = "https://github.com/seanlane\/seanlane.github.io/issues/12#issuecomment-" + 
+          data[i].url.substring(data[i].url.lastIndexOf("/") + 1);
+      var cbody = data[i].body_html;
+      var cavatarlink = data[i].user.avatar_url;
+      var cdate = Date.parse(data[i].created_at).setTimezone('UTC').toString("yyyy-MM-dd HH:mm:ss");
+
+      $("#comments").append("<div class='comment'><div class='commentheader'><div class='commentgravatar'>" 
+        + '<img src="' + cavatarlink + '" alt="" width="20" height="20">' 
+        + "</div><a class='commentuser' href=\"" + cuserlink + "\">" 
+        + cuser + "</a><a class='commentdate' href=\"" + clink 
+        + "\">" + cdate + "</a></div><div class='commentbody'>" + cbody + "</div></div>");
+    }
+  }
+
+  $.ajax("https://api.github.com/repos/seanlane\/seanlane.github.io/issues/12/comments", {
+    headers: {Accept: "application/vnd.github.full+json"},
+    success: function(msg){
+      loadComments(msg);
+    }
+  });
+</script>
+      <footer>
+        
+      </footer>
+    </article>
+    
+  </section>
+
+    </main>
+    <footer class="footer">
+  
+   © 2024
+  
+     · 
+    Powered by <a href="https://gohugo.io/">Hugo</a> &amp; Extended from <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+  
+  
+</footer>
+
+    
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-31520487-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+  </body>
+</html>

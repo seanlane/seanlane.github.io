@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aws on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/aws/</link>
+    <description>Recent content in aws on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Jul 2019 15:00:00 -0600</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Odd Attribute Error from AWS boto3</title>
+      <link>https://sean.lane.sh/posts/2019/07/Odd-Attribute-Error-from-AWS-boto3/</link>
+      <pubDate>Fri, 05 Jul 2019 15:00:00 -0600</pubDate>
+      <guid>https://sean.lane.sh/posts/2019/07/Odd-Attribute-Error-from-AWS-boto3/</guid>
+      <description>I&amp;rsquo;ve been playing around with a side project that makes use of some server-less AWS Lambda functions. I used a simple Flask app locally for testing, which took the place of the API Gateway&amp;rsquo;s role of getting server requests to the right function, and locally everything was testing fine. Note that within the Python AWS environment, the AWS credentials consisting of an Access Key ID and Secret Access Key are found as environment variables.</description>
+    </item>
+  </channel>
+</rss>

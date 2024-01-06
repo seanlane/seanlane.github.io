@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sean Lane</title>
+    <link>https://sean.lane.sh/</link>
+    <description>Recent content on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Jul 2019 21:02:11 -0600</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running the &#34;Real Time Voice Cloning&#34; project in Docker</title>
+      <link>https://sean.lane.sh/posts/2019/07/Running-the-Real-Time-Voice-Cloning-project-in-Docker/</link>
+      <pubDate>Fri, 05 Jul 2019 21:02:11 -0600</pubDate>
+      <guid>https://sean.lane.sh/posts/2019/07/Running-the-Real-Time-Voice-Cloning-project-in-Docker/</guid>
+      <description>Update on 2019-SEP-04: You may come across issues with PyQT5 when running this project, something about a plugin being found but not loaded. If so, try changing the line PyQt5 to PyQt5=5.11.3 within the requirements.txt file of the Real Time Voice Cloning project. Thanks to @dfcv24 for finding this issue!&#xA;I came across this awesome project called Real Time Voice Cloning by Corentin Jemine and I wanted to give it a shot.</description>
+    </item>
+    <item>
+      <title>Odd Attribute Error from AWS boto3</title>
+      <link>https://sean.lane.sh/posts/2019/07/Odd-Attribute-Error-from-AWS-boto3/</link>
+      <pubDate>Fri, 05 Jul 2019 15:00:00 -0600</pubDate>
+      <guid>https://sean.lane.sh/posts/2019/07/Odd-Attribute-Error-from-AWS-boto3/</guid>
+      <description>I&amp;rsquo;ve been playing around with a side project that makes use of some server-less AWS Lambda functions. I used a simple Flask app locally for testing, which took the place of the API Gateway&amp;rsquo;s role of getting server requests to the right function, and locally everything was testing fine. Note that within the Python AWS environment, the AWS credentials consisting of an Access Key ID and Secret Access Key are found as environment variables.</description>
+    </item>
+    <item>
+      <title>Snippets for Markdown to LaTeX with Pandoc</title>
+      <link>https://sean.lane.sh/posts/2018/08/Snippets-for-Markdown-to-LaTeX-with-Pandoc/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/08/Snippets-for-Markdown-to-LaTeX-with-Pandoc/</guid>
+      <description>This is another living post that serves more for my personal benefit than anything else. By living, I mean that I will continue to update it over time as I find things I want to keep easily accessible. This post is a place to paste snippets and boiler plate of Markdown/Pandoc/LaTeX material that I find useful but often forget. There&amp;rsquo;s probably nothing very genius or awe-inspiring here, but hopefully I won&amp;rsquo;t have to grep through by bash history as often, trying to remember what I did that one time to do that one thing.</description>
+    </item>
+    <item>
+      <title>Extracting Entries from jrnl.com</title>
+      <link>https://sean.lane.sh/posts/2018/08/Extracting-Entries-from-jrnl.com/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/08/Extracting-Entries-from-jrnl.com/</guid>
+      <description>Relating to my previous post today about setting up a blog using AWS, Docker Compose, Caddy Server, and Ghost, I found the need to do some web scraping. A number of years ago, my wife began journaling her thoughts in an online service called LDSJournal.com (at least I believe that was the name). About 2 years ago, this service was acquired by a new site called jrnl.com. It seems to be a fairly neat service, but one thing we were concerned with is preserving the data should the account ever disappear.</description>
+    </item>
+    <item>
+      <title>Notes from Deep Work by Cal Newport</title>
+      <link>https://sean.lane.sh/posts/2018/07/Notes-from-Deep-Work-by-Cal-Newport/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/07/Notes-from-Deep-Work-by-Cal-Newport/</guid>
+      <description>The following are some notes that I&amp;rsquo;ve gathered after reading Deep Work by Cal Newport. I enjoyed the book, felt it has some concepts I want to apply in my life, so I condensed the precepts I wanted to remember into a form that would fit onto a single sheet of US letter paper. A link to that PDF can be found here: Deep Work Notes PDF&#xA;Deep Work &amp;ldquo;Professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit.</description>
+    </item>
+    <item>
+      <title>Tech Tips from Another Lifetime</title>
+      <link>https://sean.lane.sh/posts/2018/07/Tech-Tips-from-Another-Lifetime/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/07/Tech-Tips-from-Another-Lifetime/</guid>
+      <description>The following is mostly for my own personal reference. About 5 years ago, I worked as a technical support agent for a fairly large webhosting company that used to be located in Utah, and at the time I kept a small Wordpress site with some tips or code snippets that often came in handy. I was cleaning out soem old files, and came across the SQL dump of that site when I left that job.</description>
+    </item>
+    <item>
+      <title>Home backup strategy</title>
+      <link>https://sean.lane.sh/posts/2018/07/Home-backup-strategy/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/07/Home-backup-strategy/</guid>
+      <description>TL;DR: CrashPlan died in May 2018, so I switched my family over to using Duplicati, restic, and rclone to sync backups both locally and in the cloud. As a bonus, we&amp;rsquo;re doing for free for the next year with Google Cloud Storage due to their 12 month, $300 free trial.&#xA;Motivation For the past two years or so from the date of this post, I&amp;rsquo;ve had my family using a piece of software known as CrashPlan for backing up all of the computers for my family, my siblings and their families, and my parents.</description>
+    </item>
+    <item>
+      <title>Example for LaTeX Funeral or Memorial Program</title>
+      <link>https://sean.lane.sh/posts/2018/06/Example-for-LaTeX-Funeral-or-Memorial-Program/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/06/Example-for-LaTeX-Funeral-or-Memorial-Program/</guid>
+      <description>Another quick post, but something that I hope might be useful to others. Within the past couple weeks, my grandmother of 83 years passed away and my family held a memorial service in her honor. I was asked if I could help out in creating a program booklet or pamphlet that could be given out to the attendees, something that would describe the service itself as well as share a piece of my grandmother&amp;rsquo;s life with them as we gathered to remember her.</description>
+    </item>
+    <item>
+      <title>Dynamically updating Matplotlib figures in Jupyter notebooks</title>
+      <link>https://sean.lane.sh/posts/2018/02/Dynamically-updating-Matplotlib-figures-in-Jupyter-notebooks/</link>
+      <pubDate>Sat, 24 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/02/Dynamically-updating-Matplotlib-figures-in-Jupyter-notebooks/</guid>
+      <description>Updating matplotlib figures dynamically seems to be a bit of a hassle, but the code below seems to do the trick. This is an example that outputs a figure with multiple subplots, each with multiple plots. Oddly enough, at the time of writing the image will be smaller than the figure until the Jupyter cells stops running, but this can be fixed but generating the figure in one cell, and then updating the image in a subsequent cell 1.</description>
+    </item>
+    <item>
+      <title>Setting up a new Python virtual environment for Jupyter notebooks</title>
+      <link>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</guid>
+      <description>A lot of my lab work and course work involved the use of Jupyter notebooks, though the Python dependencies needed conflict with other areas. I&amp;rsquo;ve been using virtualenvwrapper to isolate these, and other project, environments from each other. This post goes through the process of installing everything needed to get up and running with a clean Python environment for Jupyter notebooks with separate kernels for each environment, including the installation of jupyter_contrib_nbextensions which adds community developed features.</description>
+    </item>
+    <item>
+      <title>Installing Linux on a Microsoft Surface 3</title>
+      <link>https://sean.lane.sh/posts/2018/01/Installing-Linux-on-a-Microsoft-Surface-3/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/01/Installing-Linux-on-a-Microsoft-Surface-3/</guid>
+      <description>Update: April 22, 2020&#xA;This post as it stands is pretty outdated, though I currently don&amp;rsquo;t have the time to fix that. Read this comment for an idea of how things are at the moment:&#xA;https://github.com/seanlane/seanlane.github.io/issues/6#issuecomment-617574939&#xA;TL;DR: Go checkout this project for the latest kernel: https://github.com/linux-surface/linux-surface&#xA;Update: July 23, 2019&#xA;I came back to this after a hiatus, and finally finished a relevant install of Linux on my Surface 3. I abandoned the effort to use Arch Linux, opting instead to try ElementaryOS since the main purpose of this device will be for some children to use during long car rides.</description>
+    </item>
+    <item>
+      <title>El Cuarto Misionero por el Élder Lawrence Corbridge</title>
+      <link>https://sean.lane.sh/posts/2017/10/El-Cuarto-Misionero-por-el-%C3%89lder-Lawrence-Corbridge/</link>
+      <pubDate>Thu, 12 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2017/10/El-Cuarto-Misionero-por-el-%C3%89lder-Lawrence-Corbridge/</guid>
+      <description>This post is not about technology, computer science, or programming. Instead it&amp;rsquo;s a call back to my time as an LDS missionary in Paraguay. During my time there, I came across a talk given by an Elder Lawrence Corbridge that I really enjoyed. Some friends of mine were asking about it, and I wanted to make a copy in English and Spanish easily accessible. Please find the links to copies below.</description>
+    </item>
+    <item>
+      <title>Send a fax from the command line with Python and Phaxio</title>
+      <link>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</guid>
+      <description>If you want to send a simple fax quickly, cheaply, and painlessly, Phaxio and Python make a nice combo. Below is a litte script that I wrote, based on this Ruby script by Pete Keen that is slightly out of date. There are Phaxios Python libraries, but I ran into a couple issues, and this seems to be the most brain-dead simple solution. Pros: No external dependencies. Cons: It uses the shell=True parameter for subprocess.</description>
+    </item>
+    <item>
+      <title>Review of the International version of the 4th edition of Probability and Statistics by DeGroot and Schervish</title>
+      <link>https://sean.lane.sh/posts/2017/05/Review-of-the-International-version-of-the-4th-edition-of-Probability-and-Statistics-by-DeGroot-and-Schervish/</link>
+      <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2017/05/Review-of-the-International-version-of-the-4th-edition-of-Probability-and-Statistics-by-DeGroot-and-Schervish/</guid>
+      <description>As a computer science graduate student at Brigham Young University, I am taking CS 677: Bayesian Methods in Computer Science, which covers some aspects of using probability within computer science, as you probably guessed from its title. The required textbook for the course is Morris DeGroot&amp;rsquo;s 4th edition of Probability and Statistics, which at the time of writing this post is selling for about $170 new, $112 used on Amazon.com. Between being a graduate student and having a family of my own, I am not exactly swimming in funds for expensive textbooks, and my classmates had already checked out all of the available copies at the excellent Harold B.</description>
+    </item>
+    <item>
+      <title>Filtering domain names on Domcomp.com with regex</title>
+      <link>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</guid>
+      <description>Lately, I&amp;rsquo;ve been looking around for another domain name that&amp;rsquo;s a little shorter and more flexible than seanlane.net. My purposes for that can be explained another time, but I have been trying to search domain names that have top-level domains (the .com part of google.com, for example) that are shorter in length, alongside some other attributes. There are a number of good tools to use for searching for available domain names, but I have not found any that allow for searching by the length of top-level domain.</description>
+    </item>
+    <item>
+      <title>BYU CS 611: Inclusion Relationships</title>
+      <link>https://sean.lane.sh/presentations/2016/11/BYU-CS-611-Inclusion-Relationships/</link>
+      <pubDate>Wed, 02 Nov 2016 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/presentations/2016/11/BYU-CS-611-Inclusion-Relationships/</guid>
+      <description>## Inclusion Relationships ### Sean Lane ## Quiz 1. (2 pts.) Give an informal ~~proof~~ _explanation of the reasoning behind_ Corollary 5.7: $$ NP \subseteq PSPACE $$ 2. (1 pt.) What is the name of the function used by Savitch&#39;s Theorem to verify if $w$ is accepted? * A. CHECK * B. TEST * C. VERIFY * D. TEMP * E. ACCEPT * F. temp\_function\_1 3. (2 pts.) Informally explain why, for every function $f$, $$ DTIME(f) \subseteq DSPACE(f) $$ ## Theorem 5.</description>
+    </item>
+    <item>
+      <title>BYU CS 611: Claude Shannon</title>
+      <link>https://sean.lane.sh/presentations/2016/10/BYU-CS-611-Claude-Shannon/</link>
+      <pubDate>Sat, 15 Oct 2016 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/presentations/2016/10/BYU-CS-611-Claude-Shannon/</guid>
+      <description>Claude Shannon Early Years Born in Petosky, Michigan Grew up in Gaylord, Michigan Mother was a high school principal Father was a Probate Judge Early Years Early aptitude for mathematics and science Built various devices as a youth Model planes Radio-controlled boat Telegraph system to a friend&#39;s house with the wire fencing Distant cousin to Thomas Edison University of Michigan Begins studying at the University of Michigan in 1932 15 - 16 years old Introduced to the work of George Boole Boolean logic Graduates in 1936, majoring in: Electrical Engineering Mathematics Boolean algebra applied in circuits After graduation, begins studying electrical engineering at MIT in 1936 Worked under Vannevar Bush with analog differential analyzers Took a course from Norbert Weiner Spent the summer of 1937 at Bell Labs, influenced later work Boolean algebra applied in circuits Works on early analog computers and designs switching circuits based on Boolean logic At first applied to simplify telephone switching relays Then proven that all Boolean algebra problems can be solved via circuits Foundation for all electronic digital computers Boolean algebra applied in circuits Published Master’s thesis in 1937 based on this work A Symbolic Analysis of Relay and Switching Circuits Has been called “one of the most important master’s theses ever written” 22 years old Doctorate and Institute for Advanced Study Completed his doctoral degree from MIT in 1940 Dissertation: An Algebra for Theoretical Genetics Application of mathematics to genetics Completed in less than a year Also spent time in a flight training program Doctorate and Institute for Advanced Study National Research Fellow at the Institute for Advanced Study for the year following This place should sound familiar by now.</description>
+    </item>
+    <item>
+      <title>PySpark and Latent Dirichlet Allocation</title>
+      <link>https://sean.lane.sh/posts/2016/05/PySpark-and-Latent-Dirichlet-Allocation/</link>
+      <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2016/05/PySpark-and-Latent-Dirichlet-Allocation/</guid>
+      <description>This past semester, I had the chance to take two courses: Statistical Machine Learning from a Probabilistic Perspective (it&amp;rsquo;s a bit of a mouthful) and Big Data Science &amp;amp; Capstone. In the former, we had the chance to study the breadth of various statistical machine learning algorithms and processes that have flourished in recent years. This included a number of different topics ranging from Gaussian Mixture Models to Latent Dirichlet Allocation.</description>
+    </item>
+    <item>
+      <title>Hosting comments within issues on Github Pages</title>
+      <link>https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/</link>
+      <pubDate>Tue, 26 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2016/01/Hosting-comments-within-issues-on-Github-Pages/</guid>
+      <description>Note: As of February 2018, the repo for this website is public, so I moved the comments to the same repo instead of using a separate project for them.&#xA;When I created a blog to have a place to write and document things, as well as complete a class requirement for CS 404, there were properties that I wanted it to have. I wanted it to be simple, to be hosted on a reputable platform, to be under my control, and to perform well.</description>
+    </item>
+    <item>
+      <title>Missionary Service</title>
+      <link>https://sean.lane.sh/posts/2015/09/Missionary-Service/</link>
+      <pubDate>Fri, 04 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2015/09/Missionary-Service/</guid>
+      <description>I spent two years in South America where I served as a Missionary for The Church of Jesus Christ of Latter-Day Saints in Asunción, Paraguay&#xA;My missionary service in Paraguay has been one of the defining experiences in my life. I&amp;rsquo;m very grateful for the opportunity to have met some amazing people and share a message that means the world to me. Below are some albums from different areas where I resided over the course of my two year mission.</description>
+    </item>
+    <item>
+      <title>Eagle Scout</title>
+      <link>https://sean.lane.sh/posts/2015/09/Eagle-Scout/</link>
+      <pubDate>Thu, 03 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2015/09/Eagle-Scout/</guid>
+      <description>After 7 years in scouting, I achieved the rank of Eagle Scout. My project consisted of removing an existing flagpole that was too small and installing a custom made one that was twice as large. The flagpole sits adjacent to a memorial to fallen aerial firefighters outside of the Porterville Air Attack Base in Porterville, California.&#xA;An album of the project and a small article from the local newspaper about the project may be viewed at the following links:</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://sean.lane.sh/posts/2015/09/Hello-World/</link>
+      <pubDate>Wed, 02 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2015/09/Hello-World/</guid>
+      <description>Update as of November 2018: I&amp;rsquo;ve since moved to https://sean.lane.sh, just keeping this around for sentiment&amp;rsquo;s sake.&#xA;While most definitely not the first or the last, hopefully this is a seminal moment for my own personal site. I hope to stay with seanlane.net after putting my wife through the torment of having me decide which of several domain names to settle on.&#xA;I thought sean.tl would be a nice little domain hack of my first name and initials, but it proved to be fairly confusing, as most people had no idea what the &amp;lsquo;.</description>
+    </item>
+    <item>
+      <title>Other</title>
+      <link>https://sean.lane.sh/other/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/other/</guid>
+      <description>Note: This page is work in progress at the moment.&#xA;Here&amp;rsquo;s a page for some random stuff that doesn&amp;rsquo;t fit elsewhere but which I want to track.&#xA;Reading List Currently Reading The Rust Programming Language by Klabink &amp;amp; Nichols Sapiens – A Brief History of Humankind by Yuval Noah Harari Pending List Not in any given order, nor guaranteed to read.&#xA;The Caine Mutiny by Herman Wouk The Prosperity Paradox by Clayton Christensen Billion Dollar Whale by Tom Wright and Bradley Hope Human Error by James Reason The Pentagon Wars by Col.</description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>https://sean.lane.sh/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/resume/</guid>
+      <description>Experience Click here for a PDF version Senior Software Engineer&#xA;May 2022&amp;ndash;Present&#xA;Software Engineer&#xA;Nov. 2021&amp;ndash;Apr. 2022&#xA;Neighbor&#xA;Lehi, Utah&#xA;Reduced company-wide production cloud infrastructure costs by 20% Revamped how Neighbor handles payment retries, reducing failed payment attempts by 60% Lead the addition of structured logging and improved error monitoring to Neighbor microservices Improved Neighbor&#39;s listing price recommendation algorithm by 11% Built an integration testing framework using Go for our Neighbor&#39;s payment service Led critical infrastructure support and systems maintenance for several of Neighbor&#39;s core services Tools used: Go &amp;bull; Python &amp;bull; AWS &amp;bull; Ruby &amp;bull; CI/CD with Github Actions &amp;bull; Kubernetes &amp;bull; Docker &amp;bull; PostgreSQL Software Development Engineer</description>
+    </item>
+  </channel>
+</rss>

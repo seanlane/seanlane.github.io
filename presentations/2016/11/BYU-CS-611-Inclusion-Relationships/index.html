@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<meta name="author" content="Sean Lane">
+    <meta name="description" content="Sean Lane&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal,software,engineer,utah">
+
+    <title>Sean Lane</title>
+
+		<link rel="stylesheet" href="https://sean.lane.sh/presentations/css/reveal.css">
+		<link rel="stylesheet" href="https://sean.lane.sh/presentations/css/theme/black.css">
+
+		
+		<link rel="stylesheet" href="https://sean.lane.sh/presentations/lib/css/zenburn.css">
+
+		
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'https:\/\/sean.lane.sh/presentations/css/print/pdf.css' : 'https:\/\/sean.lane.sh/presentations/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		
+  <div class="reveal">
+    <div class="slides">
+      <style>
+  .reveal .slides { font-size: 0.7em; }
+</style>
+
+<section class="center" data-markdown>
+  <textarea data-template>
+
+## Inclusion Relationships
+
+### Sean Lane
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Quiz
+
+1. (2 pts.) Give an informal ~~proof~~ _explanation of the reasoning behind_ Corollary 5.7: 
+$$
+  NP \subseteq PSPACE
+$$
+
+2. (1 pt.) What is the name of the function used by Savitch's Theorem to verify if $w$ is accepted?
+  * A. CHECK
+  * B. TEST
+  * C. VERIFY
+  * D. TEMP
+  * E. ACCEPT
+  * F. temp\_function\_1
+
+3. (2 pts.) Informally explain why, for every function $f$, 
+$$
+  DTIME(f) \subseteq DSPACE(f)
+$$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.8
+
+> Our first theorem requires no proof.
+
+_For every function_ $f$, 
+
+$$
+  DTIME(f) \subseteq DSPACE(f)
+$$
+_and_
+$$
+  NTIME(f) \subseteq NSPACE(f)
+$$
+
+Why can we be sure of this?
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Lemma 5.1
+
+* Let $M$ be a one-tape $S(n)$ space-bounded Turing machine
+  * $S(n) \geq log(n)$
+* Define the _length_ ($l$?) of a configuration $I$ of $M$ to be the length of the work tape of $M$ in configuration $I$.
+  * $log(n) \leq l \leq S(n)$
+* There exists a constant $k$ such that for each $n$ and each $l$ the number of different configurations of $M$ having length $l$ on any input of length $n$ is at most $k^l$. 
+* In particular, the number of different configurations of $M$ on any input of length $n$ is at most $k^{S(n)}$.
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Lemma 5.1, Proof
+
+Assume that $M$ has $s$ states and $t$ tape symbols. A configuration $I$ of $M$ of length $l$ consists of:
+
+1. Input head position (at most $n$ + 1)
+2. The tape head position (at most $l$)
+3. The current state (at most $s$)
+4. The tape contents (at most $t^l$)
+
+Hence $M$ has at most $(n + 1)slt^l$ different configurations. We claim that there exists a constant $k$ such that for all $n \geq 1$ and $l: log(n) \leq l \leq S(n)$,
+
+$$
+  k^l \geq (n + 1)slt^l
+$$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Lemma 5.1, Proof
+
+Key sequence of inequalities:
+
+$$
+\begin{align}
+  n^cd^l &= 2^{c \cdot log(n)}d^l \\\
+         &= 2^{c \cdot log(n)}2^{d\_{1}l} \text{, for some } d\_1 \\\
+         &= 2^{c \cdot log(n) + d_1l} \\\
+         &\leq 2^{cl + d_1l} \text{, since } log(n) \leq l \\\
+         &= k^l \text{, for some } k.
+\end{align} 
+$$
+
+This Lemma provides the foundation of the proof for the following theorem. 
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.9
+
+If $L$ is accepted by and $S(n)$ space-bounded Turing machine with
+
+$$S(n) \geq log(n)$$
+
+then $L$ is accepted by an $S(n)$ space-bounded Turing machine that halts on every input. 
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.9, Proof
+
+* Let $M$ be a one-tape $S(n)$ space-bounded Turing machine that accepts $L$
+  * Space-bounded TM $\implies$ off-line TM
+* Let $k$ be the constant guaranteed by Lemma 5.1
+* Design a TM $N$ to simulate $M$:
+  * Simulate $M$ on one track
+  * Use the other track to count in base $k$
+  * Limits use of $S(n)$ space to count to $k^{S(n)}$
+  * Shut off after $k^{S(n)}$ moves
+* For each length $l: log(n) \leq l \leq S(n)$, $N$ uses no more than $l$ space to count to $k^l$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.9, Proof
+
+* Let $N$ initially assign $log(n)$ space to the counting tape
+* When $M$ scans a new cell, increase the counter length by 1
+  * When we get an integer overflow in our counter, give it another bit 
+* Now suppose that $M$ repeats one of this finite configurations.
+  * This must occur when $M$ uses some $l$ number of cells, with $l \leq S(n)$
+* We can now detect when looping occurs because eventually the counter will need more than $k^{S(n)}$ cells to count the number of moves of $M$
+  * This stems from Lemma 5.1
+  * Because $M$ is $S(n)$ space-bounded, the largest the counter should get to is $S(n)$
+  * Any acceptable input would have already accepted, so we can now safely reject
+  * $L(N) = L(M)$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Corollary 5.6
+
+$$
+  DSPACE(S(n)) \subseteq \bigcup \\{ DTIME(c^{S(n)}) | c \geq 1 \\},
+$$
+for $S(n) \geq log(n)$.
+
+* An extension of Theorem 5.9
+* If we can cap the number of possible configurations, then that cap can then be used to bound the language in time
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.10
+
+$$
+  NTIME(T(n)) \subseteq DSPACE(T(n)).
+$$
+
+* Recall the Breadth-First Search Method to prove Theorem 2.3 (pg. 33)
+  * Every nondeterministic Turing machine has an equivalent deterministic Turing machine
+* This theorem claims that the deterministic Turing machine used in proving Theorem 2.3 is T(n) space-bounded
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.10, Proof
+
+* Let $L$ be accepted by a (nondeterministic) $k$-tape TM $N$ in time $T(n)$.
+* Assign addresses to each node of $N$'s computational tree
+* Each computation path of $N$ on input of length $n$ is bounded by $T(n)$
+  * All paths must terminate within $T(n)$ moves
+  * Every address has a length $\leq T(n)$ 
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.10, Proof
+
+* Let $M$ be a $k+2$-tape off-line TM
+  * Simulate $N$ on tapes $1 \dots k$
+  * Use tape $k + 1$ to keep track of where we are in the computational tree of $N$
+  * Use tape $k + 2$ to keep track of whether the BFS should continue down another level
+* Since $N$ is time-bound by $T(n)$, each tape $1 \dots k$ can use no more than $T(n)$ number of cells
+  * By the given process of $M$, tape $k + 1$ also uses at most T(n) cells
+    * Tape $k + 2$ only uses one cell, and $1 \leq T(n)$
+* Then $L \in DSPACE(O(S(n))) \implies L \in DSPACE(S(n))$ by Corollary 5.1
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Corollary 5.7
+
+$$
+  NP \subseteq PSPACE
+$$
+
+* Let $b$ be equal to the maximum number of choices in the transition function of $N$ from the previous proof
+* Then there are at most $b^{T(n)}$ unique computation paths in the computation tree of $N$
+* Each path takes at most $T(n)$ steps
+* Then imagine doing a DFS of the computational tree of $N$
+  * Each branch will use at most $T(n)$ cells
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.11
+
+$$
+  NTIME(T(n)) \subseteq \bigcup \\{DTIME(c^{T(n)}) | c \geq 1\\}
+$$
+
+* Let $L$ be accepted by $M$ in time $T(n)$
+* Let $M$ be a nondeterministic TM with $s$ states and $t$ symbols
+* Then a configuration of $M$ consists of:
+  1. The current state (at most $s$)
+  2. The position of each tape head (at most $(T(n) + 1)^k$)
+  3. The tape contents (at most $t^{kT(n)}$)
+* Then there are at most $s(T(n) + 1)^{k}t^{kT(n)}$ unique configurations for $M$
+* We can show that there exists a constant $d$ such that
+
+$$
+  s(T(n) + 1)^{k}t^{kT(n)} \leq d^{T(n)}
+$$
+
+for all $n > 0$.
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.11, Proof
+
+* Let $I_0$ indicate the initial configuration of $M$
+* Let $I'$ indicate the configurations reachable from a given configuration $I$
+* Design a TM $N$ to list all possible configurations of $M$ that are reachable from $I_0$ via the following process:
+
+```
+  place I_0 on the list
+  for each configuration I on the list do:
+    place all configurations I' on the list
+    that M can reach in one move
+    and that are not already on the list
+  until for each I on the list, no such I' exists
+```
+
+* A RAM can do this in time $O(($length of list$)^2)$
+* Then we can design $N$ to compute the above in time $($length of list$)^c$ for some constant $c$
+* Length of list $\leq d^{T(n)} \cdot $ (length of configuration)
+  * Length of configuration is bounded by some polynomial $T(n)$
+
+$$
+  O(1)^{T(n)} T(n)^{O(1)} = O(1) \cdot T(n)
+$$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.12
+
+Let $S(n) \geq log(n)$. 
+  
+Let $M$ be a nondeterministic off-line Turing machine such that for every word $x \in L(M)$ there is an accepting computation of $M$ on $x$ that scans at most $S(n)$ cells on any work tape. 
+  
+Then there is a deterministic on-line Turing machine $N$ such that $L(N) = L(M)$ and there is a constant $c$ such that for every $x \in L(N)$, $N$ on input $x$ makes at most $c^{S(n)}$ moves.
+
+This proof works similarly to the proof for Theorem 5.11, except we can't guarantee that we can calculate $S(n)$. So we simply guess, letting $l = 1$ and attempting every path that is bounded by $l$. If all $l$-bounded paths fail to accept, increment $l$ by one and repeat
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.12, Proof
+
+* Note that $\vdash^{*}_{M}$ is the transitive closure of $M$'s next move relation
+  * For configurations $A, B$ : $A \vdash^{*}\_{M} B \iff A = B$ or there exists a sequence of configurations $A\_1,\dots,A\_k$ such that $A = A\_1 \vdash\_M A\_2 \vdash\_M \dots \vdash\_M A\_k = B$   
+* Keeping track of $l$ on one of it's work tapes, $N$ finds all configurations  
+  $I: I\_0 \vdash^*_M I$ which are also $l$-bounded. If none accept, increment $l$ by one.
+* The process could run indefinitely; if $M$ accepts $x$, then $N$ will find an accepting $I$ for some $l \leq S(n)$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.12, Proof
+
+* Let $V_{x,l}$ indicate the set of all configs. of $M$ on input $x$ that are $l$-bounded
+* Order the configs. within each set, such that $0$ indicates the initial configuration
+* Let $A\_{x,l}$ be the Boolean matrix of size $||V\_{x,l}|| \times ||V_{x,l}||$
+  * Each cell is defined by the next move relation $\vdash\_M$ of $M$ constrained to the configurations in $V\_{x,l}$:
+
+  $$
+    \forall i, j: 1 \leq i, j \leq ||V\_{x,l}||, A\_{x,l}(i,j) = 1 \iff I\_i \vdash\_M I\_j
+  $$
+
+* Transitive closure of an $n \times n$ matrix is $O(n^3)$ for a RAM
+* Then $N$ can compute $A^{*}\_{x,l}$ within $||V\_{x,l}||^{O(1)}$ moves
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.12, Proof
+
+* $M$ accepts $x \iff \exists l \leq S(n)$ and $j \leq ||V\_{x,l}||: I\_j$ is an accepting configuration and $A^{*}\_{x,l}(0,j) = 1$
+* In other words, if $M$ accepts $x$ then $N$ accepts $x$ within
+
+$$
+  \sum\_{l=1}^{S(n)} ||V\_{x,l}||^{O(1)}
+$$
+
+* Then we can find a constant $c: \forall l, ||V\_{x,l}|| \leq c^{S(n)}$. Thus:
+
+$$
+  \sum\_{l=1}^{S(n)} ||V\_{x,l}||^{O(1)} = O(1)^{S(n)}
+$$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## That concludes the warm-up, 
+## time for the good stuff
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.13 - Savitch's Theorem
+
+If $S$ is fully space-constructible and $S(n) \geq log(n)$, then
+
+$$
+  NSPACE(S(n)) \subseteq DSPACE(S^2(n)).
+$$
+
+We could try a Depth First Search approach, like with Corollary 5.7, but this would leave us with an exponential upper bound rather than a polynomial bound.
+
+Recall: A function $S(n)$ is fully space-constructible if there exists an $S(n)$ space-bounded Turing machine such that for every input of length $n$, $M$ uses exactly $S(n)$ cells.
+
+Corollaries 5.9 & 5.10 stem from Savitch's Theorem
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.13, Proof
+
+* Let $S$ be a fully space-constructible function such that $log(n) \leq S(n)$
+* Let $L = L(M)$ where $M$ is an $S(n)$ space-bounded one-tape nondeterministic Turing machine
+  * $s$ states
+  * $t$ tape symbols
+* Lemma 5.1 (pg. 99): There exists a constant $c: c^{S(n)} \geq$ the number of configurations for an input of length $n$
+* If $M$ accepts $w$, then a shortest accepting computation will not repeat any configuration
+  * $|w| = n$
+* Then there is an accepting configuration with a length $\leq c^{S(n)}$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.13, Proof
+
+* Let $m = \lceil{log(c)}\rceil$
+* The length of $c^{S(n)}$ written in binary notation is at most:
+$$
+  \lceil{log(c)^{S(n)}}\rceil \leq S(n) \lceil{log(c)}\rceil = mS(n)
+$$
+
+* Note that $2^{mS(n)} \geq c^{S(n)}$
+* Then if $M$ accepts $w$, then there exists a sequence of at most $2^{mS(n)}$ moves from $I\_0$ to an accepting configuration $I\_a$
+  * Both of these configurations, and all intermediate configurations, have a length $\leq S(n)$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.13, Proof
+
+Define a computable function TEST:
+
+$$
+  \text{TEST}(I\_1, I\_2, i): \text{ Boolean}.
+$$
+
+* TEST returns true _iff_ there exists a sequence of at most $2^i$ moves from $I\_1$ to $I\_2$ with all intermediate moves having a length no longer than $S(n)$
+
+* We then used this function to determine if $w \in L$ through the procedure in Fig. 4 (pg. 105)
+
+* Now that the procedure has been detailed, it remains to be shown that it can be implemented by an $S^2(n)$ space-bounded deterministic Turing machine.
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.13, Proof
+
+* Find space requirements for active variables in TEST:
+  * Each configuration $I\_1, I\_2, I'$ need $S(n)$ or less space
+    * Same for the storage tape and head positions
+  * $log(n) \leq S(n)$, so the input head position can be written in $S(n)$ space or less
+  * $i \leq mS(n)$, so $i$ can also be written in $O(S(n))$ space
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Theorem 5.13, Proof
+
+* Each recursive call of TEST requires saving the states of global and local variables when called
+* Though called twice per level, the second is only called after the first (and only when the first result is positive)
+* Each level decrements $i$ by one, thus there are at most $mS(n)$ recursive levels of TEST called
+* If there are at most $mS(n)$ stack layers, with each layer requiring $O(S(n))$ space, then TEST requires $O(S^2(n))$ space
+* By Corollary 5.1, $O(S^2(n))$ space can be compressed to $S^2(n)$ space, which concludes the proof
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Corollaries from Savitch's Theorem
+
+### Corollary 5.9
+
+$$
+  \begin{align}
+    PSPACE &= \bigcup\\{DSPACE(n^c) | c \geq 1\\} \\\
+           &= \bigcup\\{NSPACE(n^c) | c \geq 1\\},
+  \end{align}
+$$
+$$
+  \begin{align}
+    POLYLOGSPACE &= \bigcup\\{DSPACE(log(n)^c) | c \geq 1\\} \\\
+                 &= \bigcup\\{NSPACE(log(n)^c) | c \geq 1\\}.
+  \end{align}
+$$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>  
+
+### Corollary 5.10
+
+$$
+  NSPACE(n) \subseteq DSPACE(n^2),
+$$
+$$
+  NL \subseteq POLYLOGSPACE.
+$$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Corollary 5.11
+
+Let $S(n) \geq log(n)$. If $L$ is accepted by a nondeterministic Turing machine with **simultaneous** bounds of space $S(n)$ and time $T(n)$, then $L$ is accepted by a deterministic Turing machine that accepts every word in $L$ within space $S(n)logT(n)$.
+
+* The generalized version of Theorem 5.13, that uses a similar but different version of the function TEST
+  * If the process ever attempts to use more than $log(t)$ recursive levels, then halt
+* Note that this process guarantees nothing about words that are not accepted by $L$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Conclusion
+
+* Figures 5.5 & 5.6 depict relations of standard complexity classes:
+  * By Corollary 5.6:
+$$
+  L \subseteq P, PSPACE \subseteq EXP, DLBA \subseteq E
+$$
+
+  * By Corollary 5.7:
+
+$$
+  NP \subseteq PSPACE
+$$
+
+  * By Corollary 5.8:
+
+$$
+  NL \subseteq P, LBA \subseteq E
+$$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Conclusion
+
+  * By Corollary 5.9:
+
+$$
+  LBA \subseteq PSPACE
+$$
+
+  * By Corollary 5.10:
+
+$$
+  NL \subseteq POLYLOGSPACE
+$$
+
+  </textarea>
+</section>
+<section data-markdown>
+  <textarea data-template>
+
+## Homework
+
+Homework 5.8: Prove Corollary 5.8. 
+
+(Observe, for each constant $c$, that $c^{S(n)}$ is fully time-constructible when $S$ is. Also, observe that $n \in o(c^{S(n)})$, so the construction in Section 5.2.1 can be made to work (see pg. 91).)
+  </textarea>
+</section>
+
+    </div>
+  </div>
+
+		<script src="https://sean.lane.sh/presentations/lib/js/head.min.js"></script>
+		<script src="https://sean.lane.sh/presentations/js/reveal.js"></script>
+		<script>
+			
+			
+			
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'https:\/\/sean.lane.sh/presentations/plugin/markdown/marked.js' },
+					{ src: 'https:\/\/sean.lane.sh/presentations/plugin/markdown/markdown.js' },
+					{ src: 'https:\/\/sean.lane.sh/presentations/plugin/notes/notes.js', async: true },
+					{ src: 'https:\/\/sean.lane.sh/presentations/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'https:\/\/sean.lane.sh/presentations/plugin/math/math.js', async: true }
+				]
+			});
+		</script>
+		
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-31520487-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+	</body>
+</html>

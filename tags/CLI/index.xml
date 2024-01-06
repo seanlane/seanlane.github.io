@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CLI on Sean Lane</title>
+    <link>https://sean.lane.sh/tags/CLI/</link>
+    <description>Recent content in CLI on Sean Lane</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sean.lane.sh/tags/CLI/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tech Tips from Another Lifetime</title>
+      <link>https://sean.lane.sh/posts/2018/07/Tech-Tips-from-Another-Lifetime/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/07/Tech-Tips-from-Another-Lifetime/</guid>
+      <description>The following is mostly for my own personal reference. About 5 years ago, I worked as a technical support agent for a fairly large webhosting company that used to be located in Utah, and at the time I kept a small Wordpress site with some tips or code snippets that often came in handy. I was cleaning out soem old files, and came across the SQL dump of that site when I left that job.</description>
+    </item>
+    <item>
+      <title>Setting up a new Python virtual environment for Jupyter notebooks</title>
+      <link>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/02/Setting-up-a-new-Python-virtual-environment-for-Jupyter-notebooks/</guid>
+      <description>A lot of my lab work and course work involved the use of Jupyter notebooks, though the Python dependencies needed conflict with other areas. I&amp;rsquo;ve been using virtualenvwrapper to isolate these, and other project, environments from each other. This post goes through the process of installing everything needed to get up and running with a clean Python environment for Jupyter notebooks with separate kernels for each environment, including the installation of jupyter_contrib_nbextensions which adds community developed features.</description>
+    </item>
+    <item>
+      <title>Installing Linux on a Microsoft Surface 3</title>
+      <link>https://sean.lane.sh/posts/2018/01/Installing-Linux-on-a-Microsoft-Surface-3/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2018/01/Installing-Linux-on-a-Microsoft-Surface-3/</guid>
+      <description>Update: April 22, 2020&#xA;This post as it stands is pretty outdated, though I currently don&amp;rsquo;t have the time to fix that. Read this comment for an idea of how things are at the moment:&#xA;https://github.com/seanlane/seanlane.github.io/issues/6#issuecomment-617574939&#xA;TL;DR: Go checkout this project for the latest kernel: https://github.com/linux-surface/linux-surface&#xA;Update: July 23, 2019&#xA;I came back to this after a hiatus, and finally finished a relevant install of Linux on my Surface 3. I abandoned the effort to use Arch Linux, opting instead to try ElementaryOS since the main purpose of this device will be for some children to use during long car rides.</description>
+    </item>
+    <item>
+      <title>Send a fax from the command line with Python and Phaxio</title>
+      <link>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</link>
+      <pubDate>Wed, 30 Aug 2017 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2017/08/Send-a-fax-from-the-command-line-with-Python-and-Phaxio/</guid>
+      <description>If you want to send a simple fax quickly, cheaply, and painlessly, Phaxio and Python make a nice combo. Below is a litte script that I wrote, based on this Ruby script by Pete Keen that is slightly out of date. There are Phaxios Python libraries, but I ran into a couple issues, and this seems to be the most brain-dead simple solution. Pros: No external dependencies. Cons: It uses the shell=True parameter for subprocess.</description>
+    </item>
+    <item>
+      <title>Filtering domain names on Domcomp.com with regex</title>
+      <link>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</link>
+      <pubDate>Mon, 20 Feb 2017 00:00:00 +0000</pubDate>
+      <guid>https://sean.lane.sh/posts/2017/02/Filtering-domain-names-on-Domcomp.com-with-regex/</guid>
+      <description>Lately, I&amp;rsquo;ve been looking around for another domain name that&amp;rsquo;s a little shorter and more flexible than seanlane.net. My purposes for that can be explained another time, but I have been trying to search domain names that have top-level domains (the .com part of google.com, for example) that are shorter in length, alongside some other attributes. There are a number of good tools to use for searching for available domain names, but I have not found any that allow for searching by the length of top-level domain.</description>
+    </item>
+  </channel>
+</rss>
