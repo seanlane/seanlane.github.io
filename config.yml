@@ -35,7 +35,7 @@ params:
     current:
       - title: Senior Software Engineer
         name: Neighbor
-        blurb: Hey, I'm Sean - A Software Engineer in Utah.
+        blurb: Hey, I'm Sean — a Software Engineer in Utah.
         subblurb: I've developed features for billions of Microsoft Office and AWS users, researched vulnerabilites of cyber-physical systems, and currently I'm working on building the best peer-to-peer marketplace for storage with my colleagues at Neighbor.
         image: /images/index/neighbor.svg
         url: https://neighbor.com
@@ -75,7 +75,7 @@ params:
         image: /images/index/byu-seal-blue.svg
         image_class: index-image-tall
         url: https://cs.byu.edu
-      - title: Software Development Engineer
+      - title: Software Development Engineer Intern
         name: Microsoft
         image: /images/index/microsoft.svg
         url: https://microsoft.com
@@ -96,9 +96,9 @@ params:
         name: The Church of Jesus Christ of Latter-Day Saints
         image: /images/index/paraguay.svg
         image_class: index-image-tall
-        url: https://mormon.org
+        url: https://newsroom.churchofjesuschrist.org/topic/missionary-program
         post_url: posts/2015/09/Missionary-Service/
-      - title: Eagle Scout
+      - title: BSA Eagle Scout
         name: Boy Scouts of America
         image: /images/index/bsa.svg
         image_class: index-image-tall
